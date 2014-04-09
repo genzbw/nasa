@@ -345,9 +345,18 @@
 		B236C97A18ED0D7100677220 /* BaseController.m in Sources */ = {isa = PBXBuildFile; fileRef = B236C97918ED0D7100677220 /* BaseController.m */; };
 		B236C97E18EDCF8700677220 /* HMAC.m in Sources */ = {isa = PBXBuildFile; fileRef = B236C97D18EDCF8700677220 /* HMAC.m */; };
 		B236C98018EDCFA000677220 /* libSystem.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B236C97F18EDCFA000677220 /* libSystem.dylib */; };
+		B2A2830518F59127007F231C /* ImageDetailBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = B2A2830418F59127007F231C /* ImageDetailBoard.m */; };
+		B2A2830C18F59FF0007F231C /* FreedomBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = B2A2830B18F59FF0007F231C /* FreedomBoard.m */; };
+		B2A2830F18F5A019007F231C /* ConfigBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = B2A2830E18F5A019007F231C /* ConfigBoard.m */; };
+		B2A6752818F482E2006C70E4 /* ImageFavCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B2A6752718F482E2006C70E4 /* ImageFavCell.m */; };
+		B2A6752B18F4AA84006C70E4 /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = B2A6752A18F4AA84006C70E4 /* Photo.m */; };
 		B2ADD67F18F0505B0090DB26 /* NSString+URLEscapingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B2ADD67E18F0505B0090DB26 /* NSString+URLEscapingAdditions.m */; };
 		B2ADD68218F052200090DB26 /* OauthCredentialStore.m in Sources */ = {isa = PBXBuildFile; fileRef = B2ADD68118F052200090DB26 /* OauthCredentialStore.m */; };
 		B2ADD68618F09BB90090DB26 /* Base64Transcoder.c in Sources */ = {isa = PBXBuildFile; fileRef = B2ADD68418F09BB90090DB26 /* Base64Transcoder.c */; };
+		B2D148F518F33D8900AEEA10 /* BaseBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = B2D148F418F33D8900AEEA10 /* BaseBoard.m */; };
+		B2D148F818F33DC800AEEA10 /* MainBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = B2D148F718F33DC800AEEA10 /* MainBoard.m */; };
+		B2D148FB18F3518900AEEA10 /* ImageBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = B2D148FA18F3518900AEEA10 /* ImageBoard.m */; };
+		B2D148FE18F351D900AEEA10 /* MessageBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = B2D148FD18F351D900AEEA10 /* MessageBoard.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1035,12 +1044,30 @@
 		B236C97C18EDCF8700677220 /* HMAC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMAC.h; sourceTree = "<group>"; };
 		B236C97D18EDCF8700677220 /* HMAC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMAC.m; sourceTree = "<group>"; };
 		B236C97F18EDCFA000677220 /* libSystem.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libSystem.dylib; path = usr/lib/libSystem.dylib; sourceTree = SDKROOT; };
+		B2A2830318F59127007F231C /* ImageDetailBoard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageDetailBoard.h; sourceTree = "<group>"; };
+		B2A2830418F59127007F231C /* ImageDetailBoard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageDetailBoard.m; sourceTree = "<group>"; };
+		B2A2830A18F59FF0007F231C /* FreedomBoard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FreedomBoard.h; sourceTree = "<group>"; };
+		B2A2830B18F59FF0007F231C /* FreedomBoard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FreedomBoard.m; sourceTree = "<group>"; };
+		B2A2830D18F5A019007F231C /* ConfigBoard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigBoard.h; sourceTree = "<group>"; };
+		B2A2830E18F5A019007F231C /* ConfigBoard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfigBoard.m; sourceTree = "<group>"; };
+		B2A6752618F482E2006C70E4 /* ImageFavCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageFavCell.h; sourceTree = "<group>"; };
+		B2A6752718F482E2006C70E4 /* ImageFavCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageFavCell.m; sourceTree = "<group>"; };
+		B2A6752918F4AA84006C70E4 /* Photo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Photo.h; sourceTree = "<group>"; };
+		B2A6752A18F4AA84006C70E4 /* Photo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Photo.m; sourceTree = "<group>"; };
 		B2ADD67D18F0505B0090DB26 /* NSString+URLEscapingAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+URLEscapingAdditions.h"; sourceTree = "<group>"; };
 		B2ADD67E18F0505B0090DB26 /* NSString+URLEscapingAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+URLEscapingAdditions.m"; sourceTree = "<group>"; };
 		B2ADD68018F052200090DB26 /* OauthCredentialStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OauthCredentialStore.h; path = common/OauthCredentialStore.h; sourceTree = "<group>"; };
 		B2ADD68118F052200090DB26 /* OauthCredentialStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OauthCredentialStore.m; path = common/OauthCredentialStore.m; sourceTree = "<group>"; };
 		B2ADD68418F09BB90090DB26 /* Base64Transcoder.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Base64Transcoder.c; sourceTree = "<group>"; };
 		B2ADD68518F09BB90090DB26 /* Base64Transcoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Base64Transcoder.h; sourceTree = "<group>"; };
+		B2D148F318F33D8900AEEA10 /* BaseBoard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseBoard.h; sourceTree = "<group>"; };
+		B2D148F418F33D8900AEEA10 /* BaseBoard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseBoard.m; sourceTree = "<group>"; };
+		B2D148F618F33DC800AEEA10 /* MainBoard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainBoard.h; sourceTree = "<group>"; };
+		B2D148F718F33DC800AEEA10 /* MainBoard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainBoard.m; sourceTree = "<group>"; };
+		B2D148F918F3518900AEEA10 /* ImageBoard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageBoard.h; sourceTree = "<group>"; };
+		B2D148FA18F3518900AEEA10 /* ImageBoard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageBoard.m; sourceTree = "<group>"; };
+		B2D148FC18F351D900AEEA10 /* MessageBoard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageBoard.h; sourceTree = "<group>"; };
+		B2D148FD18F351D900AEEA10 /* MessageBoard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageBoard.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -2378,6 +2405,8 @@
 		B236C7EB18ECD0A800677220 /* model */ = {
 			isa = PBXGroup;
 			children = (
+				B2A6752918F4AA84006C70E4 /* Photo.h */,
+				B2A6752A18F4AA84006C70E4 /* Photo.m */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -2385,8 +2414,17 @@
 		B236C7EC18ECD0A800677220 /* view */ = {
 			isa = PBXGroup;
 			children = (
+				B2A2830918F59F77007F231C /* config */,
+				B2A2830818F59F70007F231C /* freedom */,
+				B2A2830718F59F68007F231C /* message */,
+				B2A2830618F59F5E007F231C /* image */,
+				B2A6752518F48294006C70E4 /* cview */,
 				B236C7ED18ECD0C700677220 /* AppBoard.h */,
 				B236C7EE18ECD0C700677220 /* AppBoard.m */,
+				B2D148F318F33D8900AEEA10 /* BaseBoard.h */,
+				B2D148F418F33D8900AEEA10 /* BaseBoard.m */,
+				B2D148F618F33DC800AEEA10 /* MainBoard.h */,
+				B2D148F718F33DC800AEEA10 /* MainBoard.m */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -2414,6 +2452,53 @@
 				B236C97D18EDCF8700677220 /* HMAC.m */,
 			);
 			name = crypt;
+			sourceTree = "<group>";
+		};
+		B2A2830618F59F5E007F231C /* image */ = {
+			isa = PBXGroup;
+			children = (
+				B2D148F918F3518900AEEA10 /* ImageBoard.h */,
+				B2D148FA18F3518900AEEA10 /* ImageBoard.m */,
+				B2A2830318F59127007F231C /* ImageDetailBoard.h */,
+				B2A2830418F59127007F231C /* ImageDetailBoard.m */,
+			);
+			name = image;
+			sourceTree = "<group>";
+		};
+		B2A2830718F59F68007F231C /* message */ = {
+			isa = PBXGroup;
+			children = (
+				B2D148FC18F351D900AEEA10 /* MessageBoard.h */,
+				B2D148FD18F351D900AEEA10 /* MessageBoard.m */,
+			);
+			name = message;
+			sourceTree = "<group>";
+		};
+		B2A2830818F59F70007F231C /* freedom */ = {
+			isa = PBXGroup;
+			children = (
+				B2A2830A18F59FF0007F231C /* FreedomBoard.h */,
+				B2A2830B18F59FF0007F231C /* FreedomBoard.m */,
+			);
+			name = freedom;
+			sourceTree = "<group>";
+		};
+		B2A2830918F59F77007F231C /* config */ = {
+			isa = PBXGroup;
+			children = (
+				B2A2830D18F5A019007F231C /* ConfigBoard.h */,
+				B2A2830E18F5A019007F231C /* ConfigBoard.m */,
+			);
+			name = config;
+			sourceTree = "<group>";
+		};
+		B2A6752518F48294006C70E4 /* cview */ = {
+			isa = PBXGroup;
+			children = (
+				B2A6752618F482E2006C70E4 /* ImageFavCell.h */,
+				B2A6752718F482E2006C70E4 /* ImageFavCell.m */,
+			);
+			name = cview;
 			sourceTree = "<group>";
 		};
 		B2ADD68318F052280090DB26 /* oauth */ = {
@@ -2565,9 +2650,11 @@
 				B236C7BB18ECC96D00677220 /* Bee_Socket.m in Sources */,
 				B20F69F618F209F60078543C /* UserController.m in Sources */,
 				B236C6E618ECC96D00677220 /* CSSSelector.m in Sources */,
+				B2A2830F18F5A019007F231C /* ConfigBoard.m in Sources */,
 				B236C7B118ECC96D00677220 /* Bee_HTTPServerRouter2.m in Sources */,
 				B236C7C518ECC96D00677220 /* ASIInputStream.m in Sources */,
 				B236C6DC18ECC96D00677220 /* UIImageView+BeeUIStyle.m in Sources */,
+				B2A6752818F482E2006C70E4 /* ImageFavCell.m in Sources */,
 				B236C6AF18ECC96D00677220 /* Bee_MessageQueue.mm in Sources */,
 				B236C75818ECC96D00677220 /* Bee_UITransitionPush.m in Sources */,
 				B236C79E18ECC96D00677220 /* NSString+BeeExtension.mm in Sources */,
@@ -2701,6 +2788,7 @@
 				B236C79718ECC96D00677220 /* NSObject+BeeJSON.mm in Sources */,
 				B236C7A718ECC96D00677220 /* Bee_HTTPRequest.m in Sources */,
 				B236C71318ECC96D00677220 /* Bee_UITabBar.m in Sources */,
+				B2D148FB18F3518900AEEA10 /* ImageBoard.m in Sources */,
 				B236C7CD18ECC96D00677220 /* OpenUDID.m in Sources */,
 				B236C6AE18ECC96D00677220 /* Bee_MessageController.mm in Sources */,
 				B236C73F18ECC96D00677220 /* BeeUILayout+CSSElement.m in Sources */,
@@ -2713,6 +2801,7 @@
 				B236C70218ECC96D00677220 /* Bee_UICheck.m in Sources */,
 				B236C7BE18ECC96D00677220 /* Bee_Service.m in Sources */,
 				B236C7A618ECC96D00677220 /* Bee_HTTPClientConfig.m in Sources */,
+				B2A2830C18F59FF0007F231C /* FreedomBoard.m in Sources */,
 				B236C6E218ECC96D00677220 /* UIView+BeeUIStyle.m in Sources */,
 				B236C7B218ECC96D00677220 /* Bee_HTTPUtility2.m in Sources */,
 				B236C7A018ECC96D00677220 /* Bee_Language.m in Sources */,
@@ -2744,6 +2833,7 @@
 				B236C6F718ECC96D00677220 /* UITextView+UIDataBinding.m in Sources */,
 				B236C75A18ECC96D00677220 /* UIViewController+Transition.m in Sources */,
 				B236C73C18ECC96D00677220 /* Bee_UILayoutBuilder_v2.m in Sources */,
+				B2D148FE18F351D900AEEA10 /* MessageBoard.m in Sources */,
 				B236C78D18ECC96D00677220 /* Bee_Thread.mm in Sources */,
 				B236C6C518ECC96D00677220 /* BeeUIBoard+BackwardCompatible.m in Sources */,
 				B236C79B18ECC96D00677220 /* NSObject+BeeTicker.mm in Sources */,
@@ -2761,6 +2851,7 @@
 				B236C7C318ECC96D00677220 /* ASIFormDataRequest.m in Sources */,
 				B236C74C18ECC96D00677220 /* BeeUIQuery+Effects.m in Sources */,
 				B236C7D218ECC96D00677220 /* CXMLDocument_CreationExtensions.m in Sources */,
+				B2A6752B18F4AA84006C70E4 /* Photo.m in Sources */,
 				B236C7C018ECC96D00677220 /* ASIDataCompressor.m in Sources */,
 				B236C6C318ECC96D00677220 /* Bee_UIStack.m in Sources */,
 				B236C7DF18ECC96D00677220 /* zip.c in Sources */,
@@ -2783,6 +2874,7 @@
 				B236C77018ECC96D00677220 /* Bee_SystemPackage.mm in Sources */,
 				B236C70418ECC96D00677220 /* Bee_UIImagePickerController.m in Sources */,
 				B236C6A918ECC96D00677220 /* Bee_Version.mm in Sources */,
+				B2D148F818F33DC800AEEA10 /* MainBoard.m in Sources */,
 				B236C6C818ECC96D00677220 /* BeeUIBoard+ModalView.m in Sources */,
 				B236C71A18ECC96D00677220 /* Bee_UIWebView.m in Sources */,
 				B236C7E018ECC96D00677220 /* ZipArchive.mm in Sources */,
@@ -2808,6 +2900,7 @@
 				B236C7C618ECC96D00677220 /* ASINetworkQueue.m in Sources */,
 				B236C7B318ECC96D00677220 /* Bee_HTTPWorkflow2.m in Sources */,
 				B236C6D818ECC96D00677220 /* BeeUIStyle+Property.m in Sources */,
+				B2D148F518F33D8900AEEA10 /* BaseBoard.m in Sources */,
 				B236C6A718ECC96D00677220 /* Bee.mm in Sources */,
 				B236C79518ECC96D00677220 /* NSNumber+BeeExtension.mm in Sources */,
 				B236C7D418ECC96D00677220 /* CXMLElement.m in Sources */,
@@ -2848,6 +2941,7 @@
 				B236C78F18ECC96D00677220 /* Bee_UnitTest.m in Sources */,
 				B236C76D18ECC96D00677220 /* Bee_UITemplateParserXMLImpl_v2.m in Sources */,
 				B236C78718ECC96D00677220 /* Bee_Log.mm in Sources */,
+				B2A2830518F59127007F231C /* ImageDetailBoard.m in Sources */,
 				B236C72918ECC96D00677220 /* Bee_UICell.m in Sources */,
 				B236C79D18ECC96D00677220 /* NSObject+BeeTypeConversion.mm in Sources */,
 				B236C97E18EDCF8700677220 /* HMAC.m in Sources */,

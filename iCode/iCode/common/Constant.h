@@ -11,4 +11,6 @@
 
 #define APIRoot @"https://www.flickr.com/services/"
 
+#define UserOauthInfoKey @"UserOauthInfo"
+
 #endif

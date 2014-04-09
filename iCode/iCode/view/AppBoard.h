@@ -7,8 +7,8 @@
 //
 
 #import "Bee_UIBoard.h"
-
-@interface AppBoard : BeeUIBoard<UIWebViewDelegate>
+#import "BaseBoard.h"
+@interface AppBoard : BaseBoard<UIWebViewDelegate>
 
 AS_SINGLETON(AppBoard)
 

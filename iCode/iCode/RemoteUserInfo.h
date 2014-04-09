@@ -8,7 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
-@interface RemoteUserInfo : NSObject
+#define fullNameKey @"fullName"
+#define accessTokenKey @"oauthToken"
+#define accessTokenSecretKey @"oauthTokenSecret"
+#define oauthUserIdKey @"oauthUserId"
+#define oauthUserNameKey @"oauthUserName"
+@interface RemoteUserInfo : NSObject<NSCoding>
 
 @property (nonatomic,copy) NSString *fullName;
 

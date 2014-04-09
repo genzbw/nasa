@@ -59,7 +59,9 @@ DEF_SINGLETON(AppBoard)
 
 - (void)handleUISignal:(BeeUISignal *)signal{
     if ([signal is:BeeUIBoard.WILL_APPEAR]) {
-        self.MSG(OauthController.GET_REQUEST_TOKEN);
+        if (![OauthCredentialStore sharedInstance].userInfo) {
+            self.MSG(OauthController.GET_REQUEST_TOKEN);
+        }
     }
 }
 
@@ -72,16 +74,20 @@ DEF_SINGLETON(AppBoard)
 
 
 - (void)showAuthorizeView:(BOOL)show{
+    if (_authorizeView) {
+        [_authorizeView removeFromSuperview];
+        [_authorizeView release];
+        _authorizeView=nil;
+    }
     if (show) {
-        if (_authorizeView==nil) {
-            _authorizeView=[[BeeUIWebView alloc] initWithFrame:self.view.bounds];
-            _authorizeView.delegate=self;
-            [_authorizeView setUrl:[self getAuthorizeUrl]];
-            [self.view addSubview:_authorizeView];
-        }
-        _authorizeView.hidden=NO;
+        _authorizeView=[[BeeUIWebView alloc] initWithFrame:self.view.bounds];
+        _authorizeView.delegate=self;
+        [_authorizeView setUrl:[self getAuthorizeUrl]];
+        [self.view addSubview:_authorizeView];
     }else{
-        _authorizeView.hidden=YES;
+        [_authorizeView removeFromSuperview];
+        [_authorizeView release];
+        _authorizeView=nil;
     }
 }
 
@@ -123,10 +129,11 @@ DEF_SINGLETON(AppBoard)
             userInfo.fullName=[OauthParameter getParameter:datas byName:@"fullname"].value;
             userInfo.oauthToken=[OauthParameter getParameter:datas byName:@"oauth_token"].value;
             userInfo.oauthTokenSecret=[OauthParameter getParameter:datas byName:@"oauth_token_secret"].value;
-            userInfo.userId=[OauthParameter getParameter:datas byName:@"user_nsid"].value;
+            userInfo.userId=[[OauthParameter getParameter:datas byName:@"user_nsid"].value stringByRemovingPercentEncoding];
             [OauthCredentialStore sharedInstance].userInfo=userInfo;
             [userInfo release];
             self.MSG(UserController.USER_LOGIN);
+            [BeeUserDefaults userDefaultsWrite:[NSKeyedArchiver archivedDataWithRootObject:userInfo] forKey:UserOauthInfoKey];
         }
     }
 }

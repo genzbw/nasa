@@ -102,7 +102,7 @@ DEF_SINGLETON(OauthCredentialStore)
 }
 
 
-- (NSString*)getRestApiUrl:(NSString*)method{
+- (NSString*)getRestApiUrl:(NSArray*)params{
     NSMutableString *str=[NSMutableString stringWithString:oauthBaseUrl];
     [str appendString:apiUrl];
     NSMutableArray *parameters=[NSMutableArray arrayWithCapacity:7];
@@ -114,7 +114,7 @@ DEF_SINGLETON(OauthCredentialStore)
     [parameters addObject:[OauthParameter OauthParameterWithName:oauthTimestampKey value:[self timestamp]]];
     [parameters addObject:[OauthParameter OauthParameterWithName:oauthVersionKey value:oauthVersionValue]];
     [parameters addObject:[OauthParameter OauthParameterWithName:@"oauth_token" value:self.userInfo.oauthToken]];
-    [parameters addObject:[OauthParameter OauthParameterWithName:@"method" value:method]];
+    [parameters addObjectsFromArray:params];
     [parameters sortUsingComparator:^NSComparisonResult(id obj1, id obj2) {
         return [obj1 compare:obj2];
     }];

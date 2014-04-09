@@ -10,6 +10,28 @@
 
 @implementation RemoteUserInfo
 
+- (void)encodeWithCoder:(NSCoder *)aCoder{
+    if (self) {
+        [aCoder encodeObject:_fullName forKey:fullNameKey];
+        [aCoder encodeObject:_userId forKey:oauthUserIdKey];
+        [aCoder encodeObject:_userName forKey:oauthUserNameKey];
+        [aCoder encodeObject:_oauthToken forKey:accessTokenKey];
+        [aCoder encodeObject:_oauthTokenSecret forKey:accessTokenSecretKey];
+    }
+}
+
+
+- (id)initWithCoder:(NSCoder *)aDecoder{
+    self=[super init];
+    if (self) {
+        _fullName=[[aDecoder decodeObjectForKey:fullNameKey] copy];
+        _userName=[[aDecoder decodeObjectForKey:oauthUserNameKey] copy];
+        _userId=[[aDecoder decodeObjectForKey:oauthUserIdKey] copy];
+        _oauthToken=[[aDecoder decodeObjectForKey:accessTokenKey] copy];
+        _oauthTokenSecret=[[aDecoder decodeObjectForKey:accessTokenSecretKey] copy];
+    }
+    return self;
+}
 
 - (void)dealloc{
     [_userId release];

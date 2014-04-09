@@ -115,7 +115,10 @@ DEF_NUMBER( TYPE_STACK,		3 )	// stack
 			if ( [self.value isKindOfClass:[BeeUIBoard class]] )
 			{
 				self.stack = [BeeUIStack stackWithFirstBoard:(BeeUIBoard *)self.value];
-			}
+			}else if([self.value isKindOfClass:[BeeUIStack class]])
+            {
+                self.stack=(BeeUIStack*)self.value;
+            }
 		}
 		
 		self.stack.name = self.rule;

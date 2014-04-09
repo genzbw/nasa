@@ -54,6 +54,6 @@ AS_SINGLETON(OauthCredentialStore)
  *
  *  @return api url
  */
-- (NSString*)getRestApiUrl:(NSString*)method;
+- (NSString*)getRestApiUrl:(NSArray*)params;
 
 @end

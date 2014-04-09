@@ -7,7 +7,9 @@
 //
 
 #import "iCodeAppDelegate.h"
-#import "AppBoard.h"
+#import "MainBoard.h"
+#import "RemoteUserInfo.h"
+#import "OauthCredentialStore.h"
 @implementation iCodeAppDelegate
 
 - (void)load{
@@ -15,16 +17,18 @@
 	bee.ui.config.iOS7Mode = YES;
 	bee.ui.config.cacheAsyncLoad = YES;
 	bee.ui.config.cacheAsyncSave = YES;
-    
-	[BeeUITipsCenter setDefaultBubble:[UIImage imageNamed:@"alertBox.png"]];
-	[BeeUITipsCenter setDefaultMessageIcon:[UIImage imageNamed:@"index-new-league-icon.png"]];
-	[BeeUITipsCenter setDefaultSuccessIcon:[UIImage imageNamed:@"index-new-league-icon.png"]];
-	[BeeUITipsCenter setDefaultFailureIcon:[UIImage imageNamed:@"index-new-league-icon.png"]];
-	
-	[BeeUINavigationBar setBackgroundImage:[UIImage imageNamed:@"navigation-bar.png"]];
-	[BeeUINavigationBar setTitleColor:[UIColor whiteColor]];
-    self.window.rootViewController=[AppBoard sharedInstance];
-    
-    [BeeUITipsCenter setDefaultContainerView:self.window.rootViewController.view];
+    [self observeNotification:BeeUIApplication.LAUNCHED];
+    self.window.rootViewController=[MainBoard sharedInstance];
+}
+
+
+- (void)handleNotification:(NSNotification *)notification{
+    if ([notification is:BeeUIApplication.LAUNCHED]) {
+        NSData *remoteUserInfo=[BeeUserDefaults userDefaultsRead:UserOauthInfoKey];
+        RemoteUserInfo *userInfo=[NSKeyedUnarchiver unarchiveObjectWithData:remoteUserInfo];
+        if (userInfo) {
+            [OauthCredentialStore sharedInstance].userInfo=userInfo;
+        }
+    }
 }
 @end
