@@ -21,8 +21,9 @@
     if (self) {
         // Initialization code
         _contentLabel=[[UILabel alloc] initWithFrame:self.bounds];
-        [_contentLabel setFont:[UIFont systemFontOfSize:12]];
-        [_contentLabel setTextAlignment:NSTextAlignmentJustified];
+        [_contentLabel setFont:[UIFont systemFontOfSize:20]];
+        [_contentLabel setTextColor:[UIColor whiteColor]];
+        [_contentLabel setTextAlignment:NSTextAlignmentNatural];
         [self addSubview:_contentLabel];
     }
     return self;

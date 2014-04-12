@@ -16,6 +16,8 @@
 		B220C13C18F9C753006A0D12 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B220C13B18F9C753006A0D12 /* CoreMotion.framework */; };
 		B220C13F18F9C848006A0D12 /* TrackView.m in Sources */ = {isa = PBXBuildFile; fileRef = B220C13E18F9C848006A0D12 /* TrackView.m */; };
 		B220C14518F9CA4E006A0D12 /* ServiceLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = B220C14418F9CA4E006A0D12 /* ServiceLocation.m */; };
+		B220C17118F9DAE2006A0D12 /* CPTTestAppScatterPlotController.m in Sources */ = {isa = PBXBuildFile; fileRef = B220C17018F9DAE2006A0D12 /* CPTTestAppScatterPlotController.m */; };
+		B220C17418F9DB9F006A0D12 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B220C17318F9DB9F006A0D12 /* QuartzCore.framework */; };
 		B236C3B418ECC93900677220 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B236C3B318ECC93900677220 /* Foundation.framework */; };
 		B236C3B618ECC93900677220 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B236C3B518ECC93900677220 /* CoreGraphics.framework */; };
 		B236C3B818ECC93900677220 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B236C3B718ECC93900677220 /* UIKit.framework */; };
@@ -350,10 +352,13 @@
 		B236C97A18ED0D7100677220 /* BaseController.m in Sources */ = {isa = PBXBuildFile; fileRef = B236C97918ED0D7100677220 /* BaseController.m */; };
 		B236C97E18EDCF8700677220 /* HMAC.m in Sources */ = {isa = PBXBuildFile; fileRef = B236C97D18EDCF8700677220 /* HMAC.m */; };
 		B236C98018EDCFA000677220 /* libSystem.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B236C97F18EDCFA000677220 /* libSystem.dylib */; };
+		B23B8C3E18F9F805003D484F /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B23B8C3D18F9F805003D484F /* Accelerate.framework */; };
 		B27DA9F518F98E7400EA6FD0 /* PlanetsBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = B27DA9F418F98E7400EA6FD0 /* PlanetsBoard.m */; };
 		B27DA9F818F98E8E00EA6FD0 /* PlanetDetailBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = B27DA9F718F98E8E00EA6FD0 /* PlanetDetailBoard.m */; };
 		B27DA9FB18F98EC500EA6FD0 /* PlanetBoardCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B27DA9FA18F98EC500EA6FD0 /* PlanetBoardCell.m */; };
 		B27DA9FF18F98EF500EA6FD0 /* TelescopeBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = B27DA9FE18F98EF500EA6FD0 /* TelescopeBoard.m */; };
+		B2A11D2218F9F2130062F054 /* libCorePlot-CocoaTouch.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B2A11D2118F9F2130062F054 /* libCorePlot-CocoaTouch.a */; };
+		B2A11D2418F9F2200062F054 /* libCorePlot-CocoaTouch.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B2A11D2318F9F2200062F054 /* libCorePlot-CocoaTouch.a */; };
 		B2A2830518F59127007F231C /* ImageDetailBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = B2A2830418F59127007F231C /* ImageDetailBoard.m */; };
 		B2A2830F18F5A019007F231C /* ConfigBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = B2A2830E18F5A019007F231C /* ConfigBoard.m */; };
 		B2A2831318F607DA007F231C /* PhotoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B2A2831218F607DA007F231C /* PhotoModel.m */; };
@@ -388,6 +393,13 @@
 			remoteGlobalIDString = B236C3AF18ECC93900677220;
 			remoteInfo = iCode;
 		};
+		B2A11D2B18F9F3610062F054 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B2A11D2518F9F3610062F054 /* CorePlot-CocoaTouch.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BC9B83470FB8A0A40035D8DA;
+			remoteInfo = "CorePlot-CocoaTouch";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -406,6 +418,10 @@
 		B220C13E18F9C848006A0D12 /* TrackView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackView.m; sourceTree = "<group>"; };
 		B220C14318F9CA4E006A0D12 /* ServiceLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServiceLocation.h; sourceTree = "<group>"; };
 		B220C14418F9CA4E006A0D12 /* ServiceLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServiceLocation.m; sourceTree = "<group>"; };
+		B220C16F18F9DAE2006A0D12 /* CPTTestAppScatterPlotController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPTTestAppScatterPlotController.h; sourceTree = "<group>"; };
+		B220C17018F9DAE2006A0D12 /* CPTTestAppScatterPlotController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPTTestAppScatterPlotController.m; sourceTree = "<group>"; };
+		B220C17218F9DB54006A0D12 /* CorePlot-CocoaTouch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CorePlot-CocoaTouch.h"; sourceTree = "<group>"; };
+		B220C17318F9DB9F006A0D12 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		B236C3B018ECC93900677220 /* iCode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iCode.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B236C3B318ECC93900677220 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B236C3B518ECC93900677220 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -1072,6 +1088,7 @@
 		B236C97C18EDCF8700677220 /* HMAC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMAC.h; sourceTree = "<group>"; };
 		B236C97D18EDCF8700677220 /* HMAC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMAC.m; sourceTree = "<group>"; };
 		B236C97F18EDCFA000677220 /* libSystem.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libSystem.dylib; path = usr/lib/libSystem.dylib; sourceTree = SDKROOT; };
+		B23B8C3D18F9F805003D484F /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		B27DA9F318F98E7400EA6FD0 /* PlanetsBoard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlanetsBoard.h; sourceTree = "<group>"; };
 		B27DA9F418F98E7400EA6FD0 /* PlanetsBoard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlanetsBoard.m; sourceTree = "<group>"; };
 		B27DA9F618F98E8E00EA6FD0 /* PlanetDetailBoard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlanetDetailBoard.h; sourceTree = "<group>"; };
@@ -1080,6 +1097,9 @@
 		B27DA9FA18F98EC500EA6FD0 /* PlanetBoardCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlanetBoardCell.m; sourceTree = "<group>"; };
 		B27DA9FD18F98EF500EA6FD0 /* TelescopeBoard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TelescopeBoard.h; sourceTree = "<group>"; };
 		B27DA9FE18F98EF500EA6FD0 /* TelescopeBoard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TelescopeBoard.m; sourceTree = "<group>"; };
+		B2A11D2118F9F2130062F054 /* libCorePlot-CocoaTouch.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libCorePlot-CocoaTouch.a"; sourceTree = "<group>"; };
+		B2A11D2318F9F2200062F054 /* libCorePlot-CocoaTouch.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libCorePlot-CocoaTouch.a"; sourceTree = "<group>"; };
+		B2A11D2518F9F3610062F054 /* CorePlot-CocoaTouch.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "CorePlot-CocoaTouch.xcodeproj"; path = "../../coreplot/core-plot/framework/CorePlot-CocoaTouch.xcodeproj"; sourceTree = "<group>"; };
 		B2A2830318F59127007F231C /* ImageDetailBoard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageDetailBoard.h; sourceTree = "<group>"; };
 		B2A2830418F59127007F231C /* ImageDetailBoard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageDetailBoard.m; sourceTree = "<group>"; };
 		B2A2830D18F5A019007F231C /* ConfigBoard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigBoard.h; sourceTree = "<group>"; };
@@ -1127,16 +1147,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B23B8C3E18F9F805003D484F /* Accelerate.framework in Frameworks */,
+				B220C17418F9DB9F006A0D12 /* QuartzCore.framework in Frameworks */,
 				B220C13C18F9C753006A0D12 /* CoreMotion.framework in Frameworks */,
 				B220C13A18F9C644006A0D12 /* CoreLocation.framework in Frameworks */,
 				B220C13518F9BD97006A0D12 /* MobileCoreServices.framework in Frameworks */,
 				B236C98018EDCFA000677220 /* libSystem.dylib in Frameworks */,
+				B2A11D2418F9F2200062F054 /* libCorePlot-CocoaTouch.a in Frameworks */,
 				B236C7E918ECD03800677220 /* libz.dylib in Frameworks */,
 				B236C7E718ECD01900677220 /* libsqlite3.dylib in Frameworks */,
 				B236C7E518ECCA8400677220 /* libxml2.dylib in Frameworks */,
 				B236C3B618ECC93900677220 /* CoreGraphics.framework in Frameworks */,
 				B236C3B818ECC93900677220 /* UIKit.framework in Frameworks */,
 				B236C3B418ECC93900677220 /* Foundation.framework in Frameworks */,
+				B2A11D2218F9F2130062F054 /* libCorePlot-CocoaTouch.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1153,6 +1177,39 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B220C16618F9D828006A0D12 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				B220C16718F9D828006A0D12 /* coreplot */,
+			);
+			path = lib;
+			sourceTree = "<group>";
+		};
+		B220C16718F9D828006A0D12 /* coreplot */ = {
+			isa = PBXGroup;
+			children = (
+				B220C16818F9D828006A0D12 /* iphoneos */,
+				B220C16A18F9D828006A0D12 /* iphonesimulator */,
+			);
+			path = coreplot;
+			sourceTree = "<group>";
+		};
+		B220C16818F9D828006A0D12 /* iphoneos */ = {
+			isa = PBXGroup;
+			children = (
+				B2A11D2118F9F2130062F054 /* libCorePlot-CocoaTouch.a */,
+			);
+			path = iphoneos;
+			sourceTree = "<group>";
+		};
+		B220C16A18F9D828006A0D12 /* iphonesimulator */ = {
+			isa = PBXGroup;
+			children = (
+				B2A11D2318F9F2200062F054 /* libCorePlot-CocoaTouch.a */,
+			);
+			path = iphonesimulator;
+			sourceTree = "<group>";
+		};
 		B236C3A718ECC93900677220 = {
 			isa = PBXGroup;
 			children = (
@@ -1176,6 +1233,9 @@
 		B236C3B218ECC93900677220 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B23B8C3D18F9F805003D484F /* Accelerate.framework */,
+				B2A11D2518F9F3610062F054 /* CorePlot-CocoaTouch.xcodeproj */,
+				B220C17318F9DB9F006A0D12 /* QuartzCore.framework */,
 				B220C13B18F9C753006A0D12 /* CoreMotion.framework */,
 				B220C13918F9C644006A0D12 /* CoreLocation.framework */,
 				B220C13418F9BD97006A0D12 /* MobileCoreServices.framework */,
@@ -1239,6 +1299,7 @@
 		B236C3E218ECC96C00677220 /* framework */ = {
 			isa = PBXGroup;
 			children = (
+				B220C16618F9D828006A0D12 /* lib */,
 				B236C3E318ECC96C00677220 /* Bee.h */,
 				B236C3E418ECC96C00677220 /* Bee.mm */,
 				B236C3E518ECC96C00677220 /* Bee_Package.h */,
@@ -2490,6 +2551,7 @@
 		B236C97618ED031800677220 /* common */ = {
 			isa = PBXGroup;
 			children = (
+				B220C17218F9DB54006A0D12 /* CorePlot-CocoaTouch.h */,
 				B20F69EE18F2022D0078543C /* Global.h */,
 				B20F69EF18F2022D0078543C /* Global.m */,
 				B236C97718ED034500677220 /* Constant.h */,
@@ -2530,12 +2592,22 @@
 		B27DA9FC18F98EDA00EA6FD0 /* telescope */ = {
 			isa = PBXGroup;
 			children = (
+				B220C16F18F9DAE2006A0D12 /* CPTTestAppScatterPlotController.h */,
+				B220C17018F9DAE2006A0D12 /* CPTTestAppScatterPlotController.m */,
 				B27DA9FD18F98EF500EA6FD0 /* TelescopeBoard.h */,
 				B27DA9FE18F98EF500EA6FD0 /* TelescopeBoard.m */,
 				B220C13D18F9C848006A0D12 /* TrackView.h */,
 				B220C13E18F9C848006A0D12 /* TrackView.m */,
 			);
 			name = telescope;
+			sourceTree = "<group>";
+		};
+		B2A11D2618F9F3610062F054 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B2A11D2C18F9F3610062F054 /* libCorePlot-CocoaTouch.a */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		B2A2830618F59F5E007F231C /* image */ = {
@@ -2689,6 +2761,12 @@
 			mainGroup = B236C3A718ECC93900677220;
 			productRefGroup = B236C3B118ECC93900677220 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = B2A11D2618F9F3610062F054 /* Products */;
+					ProjectRef = B2A11D2518F9F3610062F054 /* CorePlot-CocoaTouch.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				B236C3AF18ECC93900677220 /* iCode */,
@@ -2696,6 +2774,16 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		B2A11D2C18F9F3610062F054 /* libCorePlot-CocoaTouch.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libCorePlot-CocoaTouch.a";
+			remoteRef = B2A11D2B18F9F3610062F054 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		B236C3AE18ECC93900677220 /* Resources */ = {
@@ -2997,6 +3085,7 @@
 				B236C79118ECC96D00677220 /* NSBundle+BeeExtension.m in Sources */,
 				B236C7A818ECC96D00677220 /* Bee_HTTPRequestQueue.m in Sources */,
 				B236C77018ECC96D00677220 /* Bee_SystemPackage.mm in Sources */,
+				B220C17118F9DAE2006A0D12 /* CPTTestAppScatterPlotController.m in Sources */,
 				B236C70418ECC96D00677220 /* Bee_UIImagePickerController.m in Sources */,
 				B236C6A918ECC96D00677220 /* Bee_Version.mm in Sources */,
 				B2D148F818F33DC800AEEA10 /* MainBoard.m in Sources */,
@@ -3190,6 +3279,7 @@
 		B236C3DD18ECC93900677220 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_WARN_BOOL_CONVERSION = NO;
@@ -3198,6 +3288,7 @@
 				CLANG_WARN_INT_CONVERSION = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer: 吉星 黄 (9TMKNVXMM5)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: 吉星 黄 (9TMKNVXMM5)";
+				FRAMEWORK_SEARCH_PATHS = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iCode/iCode-Prefix.pch";
 				HEADER_SEARCH_PATHS = (
@@ -3207,9 +3298,15 @@
 				);
 				INFOPLIST_FILE = "iCode/iCode-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)/framework/lib/coreplot/$(PLATFORM_NAME)\"";
 				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = (
+					"-all_load",
+					"-ObjC",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "F8A272F3-7161-406D-971B-EE6278ACB08B";
+				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../../coreplot/core-plot/framework\"/**";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -3217,6 +3314,7 @@
 		B236C3DE18ECC93900677220 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_WARN_BOOL_CONVERSION = NO;
@@ -3225,6 +3323,7 @@
 				CLANG_WARN_INT_CONVERSION = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer: 吉星 黄 (9TMKNVXMM5)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: 吉星 黄 (9TMKNVXMM5)";
+				FRAMEWORK_SEARCH_PATHS = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iCode/iCode-Prefix.pch";
 				HEADER_SEARCH_PATHS = (
@@ -3234,9 +3333,15 @@
 				);
 				INFOPLIST_FILE = "iCode/iCode-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)/framework/lib/coreplot/$(PLATFORM_NAME)\"";
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				OTHER_LDFLAGS = (
+					"-all_load",
+					"-ObjC",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "F8A272F3-7161-406D-971B-EE6278ACB08B";
+				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../../coreplot/core-plot/framework\"/**";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

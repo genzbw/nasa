@@ -23,6 +23,8 @@
 
 @property (nonatomic,strong) CMMotionManager *motionManager;
 
+@property (nonatomic,strong) ServiceLocation *serviceLocation;
+
 @end
 
 @implementation TelescopeBoard
@@ -33,6 +35,7 @@
     [_overlayView release];
     [_imagePickerController release];
     [_motionManager release];
+    [_serviceLocation release];
     [super dealloc];
 }
 
@@ -62,10 +65,10 @@
  */
 - (void)startTrackDirection{
     [self.motionManager startGyroUpdatesToQueue:[NSOperationQueue currentQueue] withHandler:^(CMGyroData *gyroData, NSError *error) {
-        self.overlayView.text=[NSString stringWithFormat:@"旋转角度:X:%.3f,Y:%.3f,X:%.3f",gyroData.rotationRate.x,gyroData.rotationRate.y,gyroData.rotationRate.z];
+        //self.overlayView.text=[NSString stringWithFormat:@"旋转角度:X:%.3f,Y:%.3f,X:%.3f",gyroData.rotationRate.x,gyroData.rotationRate.y,gyroData.rotationRate.z];
     }];
     [self.motionManager startAccelerometerUpdatesToQueue:[NSOperationQueue currentQueue] withHandler:^(CMAccelerometerData *accelerometerData, NSError *error) {
-        self.overlayView.text=[NSString stringWithFormat:@"加速计:X:%.3f,Y:%.3f,Z:%.3f",accelerometerData.acceleration.x,accelerometerData.acceleration.y,accelerometerData.acceleration.z];
+        //self.overlayView.text=[NSString stringWithFormat:@"加速计:X:%.3f,Y:%.3f,Z:%.3f",accelerometerData.acceleration.x,accelerometerData.acceleration.y,accelerometerData.acceleration.z];
     }];
 }
 
@@ -99,7 +102,6 @@
         imagePickerController.showsCameraControls = NO;
         [self loadOverlayViewWithFrame:imagePickerController.cameraOverlayView.frame];
         imagePickerController.cameraOverlayView = self.overlayView;
-        self.overlayView = nil;
     }
     self.imagePickerController = imagePickerController;
     [imagePickerController release];
@@ -128,6 +130,10 @@
                 return;
             }
             [self initMotionManager];
+            self.serviceLocation=[[[ServiceLocation alloc] init] autorelease];
+            self.serviceLocation.whenUpdate=^(void){
+                [self.overlayView setText:[NSString stringWithFormat:@"descri:%@",[self.serviceLocation.location description]]];
+            };
             [self showCamara:UIImagePickerControllerSourceTypeCamera];
             
         }
@@ -136,11 +142,13 @@
             [self.view addSubview:self.imagePickerController.view];
         }
         [self startTrackDirection];
+        [self.serviceLocation powerOn];
     }else if([signal is:BeeUIBoard.DID_DISAPPEAR]){
         if (self.imagePickerController&&[self.imagePickerController.view superview]) {
             [self.imagePickerController.view removeFromSuperview];
         }
         [self stopTrackDirection];
+        [self.serviceLocation powerOff];
     }
 }
 
