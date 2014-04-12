@@ -7,17 +7,28 @@
 //
 
 #import "BaseController.h"
-
+#import "PhotoModel.h"
 @implementation BaseController
 
 - (void)load{
     [super load];
     _store=[OauthCredentialStore sharedInstance];
+    _needLoadFromCache=YES;
 }
 
 
+- (void)loadFromCache:(BeeMessage *)message{
+    if (_needLoadFromCache) {
+        
+    }
+}
+
 - (void)doMessageError:(BeeMessage*)message{
-    
+    if ([message.errorDomain isEqual:message.ERROR_DOMAIN_NETWORK]) {
+        if (_needLoadFromCache) {
+            [self loadFromCache:message];
+        }
+    }
 }
 
 
@@ -27,7 +38,6 @@
 
 - (void)doResponse:(BeeMessage*)message{
     if (!message.sending) {
-        NSLog(@"#########receive data#############");
         if (message.succeed) {
             NSDictionary *data=message.responseJSONDictionary;
             if (![[[data objectForKey:@"stat"]description] isEqualToString:@"fail"]) {

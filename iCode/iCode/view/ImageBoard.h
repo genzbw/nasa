@@ -7,7 +7,7 @@
 //
 
 #import "BaseBoard.h"
-
-@interface ImageBoard : BaseBoard<UITableViewDataSource,UITableViewDelegate>
+#import "BaseTableBoard.h"
+@interface ImageBoard : BaseTableBoard
 
 @end

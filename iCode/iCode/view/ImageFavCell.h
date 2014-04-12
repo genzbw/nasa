@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface ImageFavCell : UITableViewCell
+#import "BaseTableViewCell.h"
+@interface ImageFavCell :BaseTableViewCell
 
 @end

@@ -8,7 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "BaseController.h"
+#import "PhotoModel.h"
+
 @interface UserController : BaseController
+
+@property (nonatomic,strong) PhotoModel *model;
 
 AS_MESSAGE(USER_LOGIN)
 

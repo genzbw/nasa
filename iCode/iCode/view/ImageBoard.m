@@ -13,19 +13,17 @@
 #import "Photo.h"
 #import "MainBoard.h"
 @interface ImageBoard ()
-
 @property (nonatomic,strong) NSArray *datas;
-
-@property (nonatomic,strong) UITableView *tableView;
 
 @end
 
 @implementation ImageBoard
-
+- (void)load{
+    self.needRefeshHeaderView=NO;
+}
 
 - (void)dealloc{
     [_datas release];
-    [_tableView release];
     [super dealloc];
 }
 
@@ -33,13 +31,7 @@
 - (void)handleUISignal:(BeeUISignal *)signal{
     [super handleUISignal:signal];
     if ([signal is:BeeUIBoard.CREATE_VIEWS]) {
-        self.view.backgroundColor=[UIColor clearColor];
         self.title=@"image";
-        self.tableView=[[[UITableView alloc] initWithFrame:self.view.bounds] autorelease];
-        self.tableView.dataSource=self;
-        self.tableView.delegate=self;
-        self.tableView.autoresizingMask=UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
-        [self.view addSubview:_tableView];
         self.datas=[NSArray array];
     }else if([signal is:BeeUIBoard.LOAD_DATAS]){
         self.MSG(UserController.USER_FAVORITE);

@@ -14,6 +14,8 @@
 @interface BaseController : BeeController
 
 @property (nonatomic,assign) OauthCredentialStore *store;
+
+@property (nonatomic,assign) BOOL needLoadFromCache;
 /**
  *  when message has errors,
  *  we need unify deal
@@ -38,5 +40,14 @@
  *  @param message 
  */
 - (void)buildData:(BeeMessage*)message;
+
+
+
+/**
+ *  when net work is not work
+ *  we access data from local database
+ *  @param message 
+ */
+- (void)loadFromCache:(BeeMessage*)message;
 
 @end

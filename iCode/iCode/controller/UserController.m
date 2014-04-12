@@ -8,12 +8,33 @@
 
 #import "UserController.h"
 #import "Photo.h"
-
+#import "PhotoModel.h"
 @implementation UserController
 
 DEF_MESSAGE(USER_LOGIN)
 
 DEF_MESSAGE(USER_FAVORITE)
+
+- (void)load{
+    self.model=[[PhotoModel new] autorelease];
+}
+
+
+- (void)unload{
+    [_model release];
+}
+
+
+- (void)loadFromCache:(BeeMessage *)message{
+    if ([message is:self.USER_FAVORITE]) {
+        [self.model totalCounts];
+        NSArray *photos=[self.model getPhotos];
+        message.succeed=true;
+        message.OUTPUT(@"result",photos);
+    }
+}
+
+
 
 - (void) USER_LOGIN:(BeeMessage*)msg{
     if (msg.sending) {
@@ -30,6 +51,7 @@ DEF_MESSAGE(USER_FAVORITE)
         NSMutableArray *params=[NSMutableArray array];
         [params addObject:[OauthParameter OauthParameterWithName:@"user_id" value:[OauthCredentialStore sharedInstance].userInfo.userId]];
         [params addObject:[OauthParameter OauthParameterWithName:@"method" value:@"flickr.favorites.getList"]];
+        [msg setUseCache:YES];
         [msg GET:[self.store getRestApiUrl:params]];
     }else{
         [self doResponse:msg];
@@ -45,9 +67,10 @@ DEF_MESSAGE(USER_FAVORITE)
         NSDictionary *data=message.responseJSONDictionary;
         NSArray *photos=[[data objectForKey:@"photos"] objectForKey:@"photo"];
         for (NSDictionary *photo in photos) {
-            [returnDatas addObject:[Photo photoWithDict:photo]];
+            [returnDatas addObject:[Photo recordFromDictionary:photo]];
         }
-        message.OUTPUT(@"result",returnDatas);
+        [self.model savePhotos:returnDatas];
+        message.OUTPUT(@"result",[self.model savePhotos:returnDatas]);
     }
 }
 

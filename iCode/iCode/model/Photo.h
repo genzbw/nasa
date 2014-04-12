@@ -7,27 +7,27 @@
 //
 
 #import <Foundation/Foundation.h>
-@interface Photo : NSObject
+@interface Photo : BeeActiveRecord
 
-@property (nonatomic,assign) long long dateFaved;
+@property (nonatomic,copy) NSString* id;
 
-@property (nonatomic,assign) NSInteger farm;
+@property (nonatomic,retain) NSNumber* date_faved;
 
-@property (nonatomic,copy) NSString *id;
+@property (nonatomic,retain) NSNumber* farm;
 
-@property (nonatomic,assign) BOOL isFamily;
+@property (nonatomic,strong) NSNumber* isfamily;
 
-@property (nonatomic,assign) BOOL isFriend;
+@property (nonatomic,strong) NSNumber* isfriend;
 
-@property (nonatomic,assign) BOOL isPublic;
+@property (nonatomic,strong) NSNumber* ispublic;
 
-@property (nonatomic,copy) NSString *owner;
+@property (nonatomic,copy) NSString* owner;
 
-@property (nonatomic,copy) NSString *secret;
+@property (nonatomic,copy) NSString* secret;
 
-@property (nonatomic,copy) NSString *server;
+@property (nonatomic,copy) NSString* server;
 
-@property (nonatomic,copy) NSString *title;
+@property (nonatomic,copy) NSString* title;
 
 
 /**
@@ -35,13 +35,5 @@
  *  @return
  */
 - (NSString*)url;
-
-/**
- *  static method use to constuct photo 
- *  object with dict
- *  @param dict response dict
- *  @return Photo
- */
-+ (Photo*)photoWithDict:(NSDictionary*)dict;
 
 @end
