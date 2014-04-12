@@ -7,10 +7,9 @@
 //
 
 #import "MainBoard.h"
-#import "ImageBoard.h"
-#import "MessageBoard.h"
+#import "PlanetsBoard.h"
 #import "AppBoard.h"
-#import "FreedomBoard.h"
+#import "TelescopeBoard.h"
 #import "ConfigBoard.h"
 #import "NSString+URLEscapingAdditions.h"
 @interface MainBoard ()
@@ -23,11 +22,9 @@
 
 DEF_SINGLETON(MainBoard)
 
-DEF_SIGNAL(PIC)
+DEF_SIGNAL(PLANETLIST)
 
-DEF_SIGNAL(MESSAGE)
-
-DEF_SIGNAL(FREEDOM)
+DEF_SIGNAL(TELESCOPE)
 
 DEF_SIGNAL(CONFIG)
 
@@ -44,11 +41,9 @@ DEF_SIGNAL(CONFIG)
     [self.view addSubview:contentView];
     self.router=[BeeUIRouter sharedInstance];
     self.router.parentBoard=self;
-    BeeUIStack *st1=[BeeUIStack stackWithFirstBoardClass:[ImageBoard class]];
-    BeeUIStack *st2=[BeeUIStack stackWithFirstBoardClass:[MessageBoard class]];
-    [self.router map:@"icode://image" toStack:st1];
-    [self.router map:@"icode://message" toStack:st2];
-    [self.router map:@"icode://freedom" toBoard:[[FreedomBoard new] autorelease]];
+    BeeUIStack *st1=[BeeUIStack stackWithFirstBoardClass:[PlanetsBoard class]];
+    [self.router map:@"icode://planets" toStack:st1];
+    [self.router map:@"icode://telescope" toBoard:[[TelescopeBoard new] autorelease]];
     [self.router map:@"icode://config" toBoard:[[ConfigBoard new] autorelease]];
     self.router.view.autoresizingMask=UIViewAutoresizingNone;
     self.router.view.frame=CGRectMake(0,0,contentView.width,contentView.height-44);
@@ -57,9 +52,8 @@ DEF_SIGNAL(CONFIG)
     [contentView addSubview:_tabBar];
     _tabBar.delegate=self;
     _tabBar.itemPositioning=UITabBarItemPositioningFill;
-    [_tabBar addTitle:@"image" name:@"image" signal:MainBoard.PIC];
-    [_tabBar addTitle:@"message" name:@"message" signal:MainBoard.MESSAGE];
-    [_tabBar addTitle:@"freedom" name:@"freedom" signal:MainBoard.FREEDOM];
+    [_tabBar addTitle:@"planets" name:@"planets" signal:MainBoard.PLANETLIST];
+    [_tabBar addTitle:@"telescope" name:@"telescope" signal:MainBoard.TELESCOPE];
     [_tabBar addTitle:@"config" name:@"config" signal:MainBoard.CONFIG];
     for (UITabBarItem *item in _tabBar.items) {
         [item setTitlePositionAdjustment: UIOffsetMake(0, -16.5)];
@@ -74,13 +68,10 @@ DEF_SIGNAL(CONFIG)
  *  deal pic touch
  */
 ON_SIGNAL2(MainBoard,signal){
-    if ([signal is:MainBoard.PIC]) {
-        [self.router open:@"icode://image" animated:NO];
-        [[self.router currentBoard] sendUISignal:BeeUIBoard.LOAD_DATAS];
-    }else if([signal is:MainBoard.MESSAGE]){
-        [self.router open:@"icode://message" animated:NO];
-    }else if([signal is:MainBoard.FREEDOM]){
-        [self.router open:@"icode://freedom" animated:NO];
+    if ([signal is:MainBoard.PLANETLIST]) {
+        [self.router open:@"icode://planets" animated:NO];
+    }else if([signal is:MainBoard.TELESCOPE]){
+        [self.router open:@"icode://telescope" animated:NO];
     }else if([signal is:MainBoard.CONFIG]){
         [self.router open:@"icode://config" animated:NO];
     }

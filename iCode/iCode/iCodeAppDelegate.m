@@ -24,10 +24,15 @@
 
 - (void)handleNotification:(NSNotification *)notification{
     if ([notification is:BeeUIApplication.LAUNCHED]) {
-        NSData *remoteUserInfo=[BeeUserDefaults userDefaultsRead:UserOauthInfoKey];
-        RemoteUserInfo *userInfo=[NSKeyedUnarchiver unarchiveObjectWithData:remoteUserInfo];
-        if (userInfo) {
-            [OauthCredentialStore sharedInstance].userInfo=userInfo;
+//        NSData *remoteUserInfo=[BeeUserDefaults userDefaultsRead:UserOauthInfoKey];
+//        RemoteUserInfo *userInfo=[NSKeyedUnarchiver unarchiveObjectWithData:remoteUserInfo];
+//        if (userInfo) {
+//            [OauthCredentialStore sharedInstance].userInfo=userInfo;
+//        }
+        if ([BeeUserDefaults userDefaultsRead:UserAlertSwitchKey]!=nil) {
+            [Global sharedInstance].alertSwitchOn=[[BeeUserDefaults userDefaultsRead:UserAlertSwitchKey] boolValue];
+        }else{
+            [Global sharedInstance].alertSwitchOn=YES;
         }
     }
 }

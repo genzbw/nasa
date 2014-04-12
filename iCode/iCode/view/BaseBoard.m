@@ -15,6 +15,11 @@
 @implementation BaseBoard
 
 
+- (void)load{
+    self.allowedLandscape=NO;
+}
+
+
 - (void)doMessageError:(NSError*)error{
     
 }

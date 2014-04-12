@@ -10,6 +10,9 @@
 #import "OauthCredentialStore.h"
 @interface Global : NSObject
 
+
+@property (nonatomic,assign) BOOL alertSwitchOn;
+
 AS_SINGLETON(Global)
 
 @end

@@ -48,12 +48,11 @@ DEF_MESSAGE(USER_FAVORITE)
 
 - (void) USER_FAVORITE:(BeeMessage*)msg{
     if (msg.sending) {
-//        NSMutableArray *params=[NSMutableArray array];
-//        [params addObject:[OauthParameter OauthParameterWithName:@"user_id" value:[OauthCredentialStore sharedInstance].userInfo.userId]];
-//        [params addObject:[OauthParameter OauthParameterWithName:@"method" value:@"flickr.favorites.getList"]];
-//        [msg setUseCache:YES];
-        [msg GET:@"http://10.172.248.56:8000"];
-        //[msg GET:[self.store getRestApiUrl:params]];
+        NSMutableArray *params=[NSMutableArray array];
+        [params addObject:[OauthParameter OauthParameterWithName:@"user_id" value:[OauthCredentialStore sharedInstance].userInfo.userId]];
+        [params addObject:[OauthParameter OauthParameterWithName:@"method" value:@"flickr.favorites.getList"]];
+        [msg setUseCache:YES];
+        [msg GET:[self.store getRestApiUrl:params]];
     }else{
         [self doResponse:msg];
     }

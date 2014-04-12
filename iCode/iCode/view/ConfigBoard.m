@@ -36,11 +36,18 @@
         self.tableView.autoresizingMask=UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
         [self.view addSubview:_tableView];
     }else if([signal is:BeeUIBoard.LOAD_DATAS]){
-        self.datas=[NSArray arrayWithObjects:@"authorize",nil];
+        self.datas=[NSArray arrayWithObjects:@"alert",nil];
     }else if([signal is:BeeUISwitch.ON]) {
-        [BeeUserDefaults removeObjectForKey:UserOauthInfoKey];
+        if ([Global sharedInstance].alertSwitchOn!=YES) {
+            [Global sharedInstance].alertSwitchOn=YES;
+            [BeeUserDefaults userDefaultsWrite:[NSNumber numberWithBool:YES] forKey:UserAlertSwitchKey];
+        }
     }else if([signal is:BeeUISwitch.OFF]){
-        [self presentModalBoard:[[AppBoard new] autorelease] animated:YES];
+        if ([Global sharedInstance].alertSwitchOn!=NO) {
+            [Global sharedInstance].alertSwitchOn=NO;
+            [BeeUserDefaults userDefaultsWrite:[NSNumber numberWithBool:NO]
+                                        forKey:UserAlertSwitchKey];
+        }
     }
 }
 
@@ -66,6 +73,7 @@
         [cell.textLabel setFont:[UIFont systemFontOfSize:12]];
         [cell.textLabel setTextAlignment:NSTextAlignmentLeft];
         BeeUISwitch *switchView=[[BeeUISwitch alloc] initWithFrame:CGRectMake(self.width-60, 7, 60, 20)];
+        [switchView setOn:[Global sharedInstance].alertSwitchOn];
         [cell.contentView addSubview:switchView];
         [switchView release];
     }

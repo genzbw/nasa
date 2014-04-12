@@ -59,7 +59,7 @@
             [view release];
         }
     }else if ([signal is:BeeUIBoard.LAYOUT_VIEWS]){
-        NSLog(@"tableView:%@",self.tableView);
+        NSLog(@"self:%@,tableView:%@",self,self.tableView);
     }
 }
 

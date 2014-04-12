@@ -13,4 +13,6 @@
 
 #define UserOauthInfoKey @"UserOauthInfo"
 
+#define UserAlertSwitchKey @"UserAlertSwitch"
+
 #endif

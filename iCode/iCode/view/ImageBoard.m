@@ -35,7 +35,11 @@
         self.datas=[NSArray array];
     }else if([signal is:BeeUIBoard.LOAD_DATAS]){
         self.MSG(UserController.USER_FAVORITE);
+    }else if ([signal is:BeeUIBoard.LAYOUT_VIEWS]){
+        self.tableView.top=44;
+        NSLog(@"self:%@,tableView:%@",self,self.tableView);
     }
+
 }
 
 
