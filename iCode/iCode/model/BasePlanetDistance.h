@@ -10,13 +10,12 @@
 
 @interface BasePlanetDistance : BeeActiveObject
 
-@property (nonatomic,copy) NSString *target_body_code;
+@property (nonatomic,copy) NSString *aid;
 
-@property (nonatomic,copy) NSString *distance_time;
+@property (nonatomic,copy) NSString *lt;
 
-@property (nonatomic,copy) NSString *current_distance;
+@property (nonatomic,copy) NSString *alt;
 
-
-+ (id)ObjectWithBasePlanet:(BasePlanet*)basePlanet;
+@property (nonatomic,copy) NSString *azi;
 
 @end

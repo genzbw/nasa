@@ -8,22 +8,37 @@
 
 @interface BasePlanet :BeeActiveRecord
 
-@property (nonatomic,copy) NSString *target_body_code;
+/**
+ *  asteroid name
+ */
+@property (nonatomic,copy) NSString *name;
 
-@property (nonatomic,copy) NSString *target_body_name;
+/**
+ *  primary
+ */
+@property (nonatomic,copy) NSString *primary;
 
-@property (nonatomic,copy) NSString *center_geoetic;
 
-@property (nonatomic,copy) NSString *center_radii;
+/**
+ *  raddii
+ */
+@property (nonatomic,copy) NSString *radii;
 
-@property (nonatomic,copy) NSString *center_body_name;
 
-@property (nonatomic,copy) NSString *target_primary;
+/**
+ *  aid
+ */
+@property (nonatomic,copy) NSString *aid;
 
-@property (nonatomic,copy) NSString *target_radii;
-
+/**
+ *  from earth to distance_time
+ */
 @property (nonatomic,copy) NSString *distance_time;
 
+
+/**
+ *  current_distance
+ */
 @property (nonatomic,copy) NSString *current_distance;
 
 @end

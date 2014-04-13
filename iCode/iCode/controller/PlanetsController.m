@@ -10,6 +10,8 @@
 #import "BasePlanet.h"
 #import "PlanetModel.h"
 #import "BasePlanetDistance.h"
+#import "NSString+URLEscapingAdditions.h"
+
 @implementation PlanetsController
 
 DEF_MESSAGE(PLANTS_LIST)
@@ -35,20 +37,31 @@ DEF_MESSAGE(PLANTS_DISTANCE_INFO)
 
 - (void) PLANTS_LIST:(BeeMessage*)msg{
     if (msg.sending) {
-        msg.GET([NSString stringWithFormat:@"%@full_list_query",iCodeRoot]);
+        msg.GET([NSString stringWithFormat:@"%@asteroid",iCodeRoot]);
     }else{
         [self doResponse:msg];
     }
 }
 
+-(NSString *)getUTCFormateDate:(NSDate *)localDate {
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    NSTimeZone *timeZone = [NSTimeZone timeZoneWithName:@"UTC"];
+    [dateFormatter setTimeZone:timeZone];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd%20HH:mm"];
+    NSString *dateString = [dateFormatter stringFromDate:localDate];
+    [dateFormatter release];
+    return dateString;
+}
 
+/**
+ *  date time formatter 2014-Apr-13 12:00
+ *
+ *  @param msg
+ */
 - (void) PLANTS_DISTANCE_INFO:(BeeMessage*)msg{
     if (msg.sending) {
-        NSArray *datas=msg.GET_INPUT(@"distanceDatas");
-        NSString *result=[datas JSONString];
-        NSLog(@"%@",result);
-        msg.OUTPUT(@"result",datas);
-        //msg.POST([NSString stringWithFormat:@"%@attr_query?jsonData=%@",iCodeRoot,result]);
+        NSString *date=[self getUTCFormateDate:[NSDate date]];
+        [msg GET:[NSString stringWithFormat:@"%@current?utc=%@&lat=20&lon=20",iCodeRoot,date]];
     }else{
         [self doResponse:msg];
     }
@@ -57,11 +70,20 @@ DEF_MESSAGE(PLANTS_DISTANCE_INFO)
 - (void)buildData:(BeeMessage *)message{
     if ([message is:self.PLANTS_LIST]) {
         NSMutableArray *returnDatas=[NSMutableArray array];
-        NSArray *data=message.responseJSONArray;
-        for (NSDictionary *dict in data) {
-           [returnDatas addObject:[BasePlanet recordFromDictionary:dict]];
+        NSDictionary *dict=message.responseJSONDictionary;
+        //NSLog(@"%@",dict);
+        NSArray *items= [dict objectForKey:@"_items"];
+        for (NSDictionary *item in items) {
+            [returnDatas addObject:[BasePlanet objectFromDictionary:item]];
         }
         message.OUTPUT(@"result",[self.model savePlanets:returnDatas]);
+    }else if([message is:self.PLANTS_DISTANCE_INFO]){
+        NSArray *datas=message.responseJSONArray;
+        NSMutableArray *returnDatas=[NSMutableArray array];
+        for (NSDictionary *dict in datas) {
+            [returnDatas addObject:[BasePlanetDistance objectFromDictionary:dict]];
+        }
+        message.OUTPUT(@"result",returnDatas);
     }
 }
 

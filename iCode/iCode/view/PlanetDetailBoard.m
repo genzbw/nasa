@@ -42,7 +42,7 @@
 - (void)handleUISignal:(BeeUISignal *)signal{
     [super handleUISignal:signal];
     if ([signal is:BeeUIBoard.CREATE_VIEWS]) {
-        self.title=self.planet.target_body_name;
+        self.title=self.planet.name;
         [self.view setBackgroundColor:[UIColor blackColor]];
         
         NSDictionary *dict=[self.planet JSON];

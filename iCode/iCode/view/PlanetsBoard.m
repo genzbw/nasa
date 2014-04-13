@@ -13,6 +13,8 @@
 #import "PlanetDetailBoard.h"
 #import "BasePlanetDistance.h"
 #import "CoverController.h"
+#import "ServiceLocation.h"
+
 @interface PlanetsBoard ()
 
 @property (nonatomic,strong) NSArray *datas;
@@ -20,6 +22,8 @@
 @property (nonatomic,assign) NSTimer *timer;
 
 @property (nonatomic,assign) NSInteger times;
+
+@property (nonatomic,strong) ServiceLocation *serviceLocation;
 
 @end
 
@@ -55,12 +59,7 @@
  *  refresh planet distance
  */
 - (void)refreshDistance{
-    NSMutableArray *sendDatas=[NSMutableArray array];
-    for (BasePlanet *planet in self.datas) {
-        BasePlanetDistance *distance=[BasePlanetDistance ObjectWithBasePlanet:planet];
-        [sendDatas addObject:distance];
-    }
-    self.MSG(PlanetsController.PLANTS_DISTANCE_INFO).INPUT(@"distanceDatas",sendDatas);
+    self.MSG(PlanetsController.PLANTS_DISTANCE_INFO);
 }
 
 
@@ -75,6 +74,10 @@
     if ([signal is:BeeUIBoard.CREATE_VIEWS]) {
         self.title=@"Planets";
         [self.tableView setSeparatorColor:RGB(150, 150, 150)];
+        self.serviceLocation=[[[ServiceLocation alloc] init] autorelease];
+        self.serviceLocation.whenUpdate=^(void){
+            
+        };
     }else if([signal is:BeeUIBoard.LOAD_DATAS]){
         self.MSG(PlanetsController.PLANTS_LIST);
     }else if ([signal is:BeeUIBoard.LAYOUT_VIEWS]){
@@ -106,8 +109,8 @@
         [cell.textLabel setTextAlignment:NSTextAlignmentLeft];
     }
     BasePlanet *basePlanet= [self.datas objectAtIndex:indexPath.row];
-    [cell.textLabel setText:basePlanet.target_body_name];
-    [cell.detailTextLabel setText:@"22"];
+    [cell.textLabel setText:basePlanet.name];
+    [cell.detailTextLabel setText:@"--"];
     return cell;
 }
 
@@ -128,18 +131,16 @@
     for (BasePlanetDistance *distance in datas) {
         int index=0;
         for (BasePlanet *planet in self.datas) {
-            if ([distance.target_body_code isEqualToString:planet.target_body_code]) {
-                planet.distance_time=distance.distance_time;
-                distance.current_distance=[NSString stringWithFormat:@"%d",self.times*2+index];
-                planet.current_distance=distance.current_distance;
+            if ([distance.aid isEqualToString:planet.aid]) {
+                planet.current_distance=distance.lt;
                 break;
             }
             index++;
         }
         NSIndexPath *indexPath=[NSIndexPath indexPathForRow:index inSection:0];
         UITableViewCell *cell=[self.tableView cellForRowAtIndexPath:indexPath];
-        [cell.detailTextLabel setText:[NSString stringWithFormat:@"distance:%@",distance.current_distance]];
-        if ([distance.current_distance intValue]<AlarmDistance) {
+        [cell.detailTextLabel setText:[NSString stringWithFormat:@"distance:%@",distance.lt]];
+        if ([distance.lt intValue]<AlarmDistance) {
             [cell setBackgroundColor:[UIColor redColor]];
         }else{
             [cell setBackgroundColor:[UIColor clearColor]];
@@ -161,13 +162,13 @@
             }
         }
     }else if([msg is:PlanetsController.PLANTS_DISTANCE_INFO]){
-        //if (msg.state==msg.STATE_SUCCEED) {
+        if (msg.state==msg.STATE_SUCCEED) {
             NSArray *datas= msg.GET_OUTPUT(@"result");
             if ([self.datas count]>0) {
                 self.times++;
                 [self syncPlanetDistance:datas];
             }
-        //}
+        }
     }
 }
 

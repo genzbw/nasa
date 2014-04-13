@@ -11,19 +11,16 @@
 @implementation BasePlanet
 
 - (NSString*)activePrimaryKey{
-    return @"target_body_code";
+    return @"aid";
 }
 
 
 
 - (void)dealloc{
-    [_target_body_code release];
-    [_target_body_name release];
-    [_center_body_name release];
-    [_center_radii release];
-    [_center_geoetic release];
-    [_target_primary release];
-    [_target_radii release];
+    [_name release];
+    [_aid release];
+    [_primary release];
+    [_radii release];
     [_distance_time release];
     [_current_distance release];
     [super dealloc];
