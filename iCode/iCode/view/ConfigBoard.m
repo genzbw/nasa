@@ -43,12 +43,14 @@
         if ([Global sharedInstance].alertSwitchOn!=YES) {
             [Global sharedInstance].alertSwitchOn=YES;
             [BeeUserDefaults userDefaultsWrite:[NSNumber numberWithBool:YES] forKey:UserAlertSwitchKey];
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"ALERT_NOTIFIC" object:[NSNumber numberWithBool:YES]];
         }
     }else if([signal is:BeeUISwitch.OFF]){
         if ([Global sharedInstance].alertSwitchOn!=NO) {
             [Global sharedInstance].alertSwitchOn=NO;
             [BeeUserDefaults userDefaultsWrite:[NSNumber numberWithBool:NO]
                                         forKey:UserAlertSwitchKey];
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"ALERT_NOTIFIC" object:[NSNumber numberWithBool:NO]];
         }
     }
 }

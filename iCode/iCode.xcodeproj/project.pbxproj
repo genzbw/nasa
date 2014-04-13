@@ -405,6 +405,8 @@
 		B2BB103C18FAB57B0059FD43 /* button_setting.png in Resources */ = {isa = PBXBuildFile; fileRef = B2BB103B18FAB57B0059FD43 /* button_setting.png */; };
 		B2BB103E18FAB5860059FD43 /* bottom.png in Resources */ = {isa = PBXBuildFile; fileRef = B2BB103D18FAB5860059FD43 /* bottom.png */; };
 		B2BB104018FAB5890059FD43 /* button_asteroid.png in Resources */ = {isa = PBXBuildFile; fileRef = B2BB103F18FAB5890059FD43 /* button_asteroid.png */; };
+		B2BB104818FAEE020059FD43 /* t1_l.png in Resources */ = {isa = PBXBuildFile; fileRef = B2BB104618FAEE020059FD43 /* t1_l.png */; };
+		B2BB104918FAEE020059FD43 /* t1_b.png in Resources */ = {isa = PBXBuildFile; fileRef = B2BB104718FAEE020059FD43 /* t1_b.png */; };
 		B2D148F518F33D8900AEEA10 /* BaseBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = B2D148F418F33D8900AEEA10 /* BaseBoard.m */; };
 		B2D148F818F33DC800AEEA10 /* MainBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = B2D148F718F33DC800AEEA10 /* MainBoard.m */; };
 		B2D148FB18F3518900AEEA10 /* ImageBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = B2D148FA18F3518900AEEA10 /* ImageBoard.m */; };
@@ -1193,6 +1195,8 @@
 		B2BB103B18FAB57B0059FD43 /* button_setting.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_setting.png; sourceTree = "<group>"; };
 		B2BB103D18FAB5860059FD43 /* bottom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bottom.png; sourceTree = "<group>"; };
 		B2BB103F18FAB5890059FD43 /* button_asteroid.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_asteroid.png; sourceTree = "<group>"; };
+		B2BB104618FAEE020059FD43 /* t1_l.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = t1_l.png; sourceTree = "<group>"; };
+		B2BB104718FAEE020059FD43 /* t1_b.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = t1_b.png; sourceTree = "<group>"; };
 		B2D148F318F33D8900AEEA10 /* BaseBoard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseBoard.h; sourceTree = "<group>"; };
 		B2D148F418F33D8900AEEA10 /* BaseBoard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseBoard.m; sourceTree = "<group>"; };
 		B2D148F618F33DC800AEEA10 /* MainBoard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainBoard.h; sourceTree = "<group>"; };
@@ -2765,6 +2769,8 @@
 				B2BB103618FAB5780059FD43 /* button_telescope.png */,
 				B2BB100018FAA86C0059FD43 /* active-navbar-gear.png */,
 				B2BB103F18FAB5890059FD43 /* button_asteroid.png */,
+				B2BB104618FAEE020059FD43 /* t1_l.png */,
+				B2BB104718FAEE020059FD43 /* t1_b.png */,
 				B2BB100118FAA86C0059FD43 /* active-navbar-planetoid.png */,
 				B2BB100218FAA86C0059FD43 /* active-navbar-telescope.png */,
 				B2BB100318FAA86C0059FD43 /* bottom-bar.png */,
@@ -2890,6 +2896,7 @@
 				B236C3BE18ECC93900677220 /* InfoPlist.strings in Resources */,
 				B2BB100E18FAA86C0059FD43 /* bottom-bar.png in Resources */,
 				B2BB101318FAA86C0059FD43 /* navbar-telescope.png in Resources */,
+				B2BB104818FAEE020059FD43 /* t1_l.png in Resources */,
 				B2B1A06918F88ECD00DC6974 /* whiteArrow@2x.png in Resources */,
 				B2BB101518FAA86C0059FD43 /* planetoid-large.png in Resources */,
 				B2BB100C18FAA86C0059FD43 /* active-navbar-planetoid.png in Resources */,
@@ -2900,6 +2907,7 @@
 				B2BB101018FAA86C0059FD43 /* dividing-line.png in Resources */,
 				B2BB103E18FAB5860059FD43 /* bottom.png in Resources */,
 				B2BB103C18FAB57B0059FD43 /* button_setting.png in Resources */,
+				B2BB104918FAEE020059FD43 /* t1_b.png in Resources */,
 				B2B1A06418F88ECD00DC6974 /* blueArrow.png in Resources */,
 				B2B1A06318F88ECD00DC6974 /* blackArrow@2x.png in Resources */,
 				B2BB103718FAB5780059FD43 /* button_telescope.png in Resources */,

@@ -17,7 +17,7 @@
     [imageView setBackgroundImage:[UIImage imageNamed:@"bottom.png"]];
     [imageView setUserInteractionEnabled:YES];
     [self addSubview:imageView];
-    
+    //button_asteroid.png
     NSArray *pics=[NSArray arrayWithObjects:@"button_asteroid.png",@"button_telescope.png",@"button_setting.png", nil];
     UIButton *actionButton=nil;
     CGFloat x=0;
@@ -28,7 +28,17 @@
         actionButton.frame=CGRectMake(x, 39, width, height);
         actionButton.tag=buttonTag+i;
         x+=width;
+//        if (i==0) {
+//            NSString *piclName=[NSString stringWithFormat:@"%@_l.png",[pics objectAtIndex:i]];
+//            NSString *picbName=[NSString stringWithFormat:@"%@_b.png",[pics objectAtIndex:i]];
+//            [actionButton setBackgroundImage:[UIImage imageNamed:picbName] forState:UIControlStateNormal];
+//            [actionButton setBackgroundImage:[UIImage imageNamed:piclName] forState:UIControlStateHighlighted];
+//        }else{
+//            [actionButton setBackgroundImage:[UIImage imageNamed:[pics objectAtIndex:i]] forState:UIControlStateNormal];
+//        }
+        
         [actionButton setBackgroundImage:[UIImage imageNamed:[pics objectAtIndex:i]] forState:UIControlStateNormal];
+       
         [actionButton addTarget:self action:@selector(buttonSelected:) forControlEvents:UIControlEventTouchUpInside];
         [imageView addSubview:actionButton];
     }

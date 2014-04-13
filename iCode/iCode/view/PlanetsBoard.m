@@ -34,6 +34,8 @@
 }
 
 - (void)dealloc{
+    [_serviceLocation release];
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
     [self stopTimer];
     [_datas release];
     [super dealloc];
@@ -50,8 +52,10 @@
 }
 
 -(void)startTimer{
-    [self stopTimer];
-    _timer= [NSTimer scheduledTimerWithTimeInterval:PlanetFetchIdle target:self selector:@selector(refreshDistance) userInfo:nil repeats:YES];
+    if ([Global sharedInstance].alertSwitchOn) {
+        [self stopTimer];
+        _timer= [NSTimer scheduledTimerWithTimeInterval:PlanetFetchIdle target:self selector:@selector(refreshDistance) userInfo:nil repeats:YES];
+    }
 }
 
 
@@ -72,12 +76,13 @@
 - (void)handleUISignal:(BeeUISignal *)signal{
     [super handleUISignal:signal];
     if ([signal is:BeeUIBoard.CREATE_VIEWS]) {
-        self.title=@"Planets";
+        self.title=@"Asteroid";
         [self.tableView setSeparatorColor:RGB(150, 150, 150)];
         self.serviceLocation=[[[ServiceLocation alloc] init] autorelease];
         self.serviceLocation.whenUpdate=^(void){
             
         };
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(startAlert:) name:@"ALERT_NOTIFIC" object:nil];
     }else if([signal is:BeeUIBoard.LOAD_DATAS]){
         self.MSG(PlanetsController.PLANTS_LIST);
     }else if ([signal is:BeeUIBoard.LAYOUT_VIEWS]){
@@ -90,6 +95,30 @@
         [self stopTimer];
     }
 }
+
+
+- (void)resetCellStatus{
+    for (int i=0; i<[self.datas count]; i++) {
+        NSIndexPath *indexPath=[NSIndexPath indexPathForRow:i inSection:0];
+        UITableViewCell *cell=[self.tableView cellForRowAtIndexPath:indexPath];
+        if (cell) {
+            [cell setBackgroundColor:[UIColor blackColor]];
+        }
+    }
+}
+
+#pragma mark--
+#pragma deal notification
+- (void)startAlert:(NSNotification*)notification{
+    NSNumber *number= notification.object;
+    if ([number boolValue]) {
+        [self startTimer];
+    }else{
+        [self stopTimer];
+        [self resetCellStatus];
+    }
+}
+
 
 
 #pragma mark -- table delegate
@@ -132,7 +161,9 @@
         int index=0;
         for (BasePlanet *planet in self.datas) {
             if ([distance.aid isEqualToString:planet.aid]) {
-                planet.current_distance=distance.lt;
+                if (distance.lt&&[distance.lt length]>0) {
+                   planet.current_distance=distance.lt;
+                }
                 break;
             }
             index++;
