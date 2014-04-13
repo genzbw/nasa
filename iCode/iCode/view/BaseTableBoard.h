@@ -15,10 +15,17 @@
 
 @property (nonatomic,assign) BOOL needRefeshHeaderView;
 
+
 - (UITableViewCell*)getCellWithData:(id)data;
 
 
 - (EGORefreshTableHeaderView*)getRefreshHeaderView;
+
+
+- (void)reloadTableViewDataSource;
+
+
+- (void)doneLoadingTableViewData;
 
 
 @end

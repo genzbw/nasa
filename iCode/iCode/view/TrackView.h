@@ -13,7 +13,15 @@
 
 @property (nonatomic,strong) UILabel *contentLabel;
 
+@property (nonatomic,strong) UILabel *gpsLabel;
+
+@property (nonatomic,strong) UILabel *accessLabel;
 
 - (void)setText:(NSString *)text;
+
+- (void)setGpsText:(NSString*)gpsText;
+
+- (void)setAccText:(NSString*)accText;
+
 
 @end

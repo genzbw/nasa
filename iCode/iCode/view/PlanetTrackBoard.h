@@ -1,15 +1,13 @@
 //
-//  PlanetBoardCell.h
+//  PlanetTrackBoard.h
 //  iCode
 //
 //  Created by hjx on 2014-04-12.
 //  Copyright (c) 2014 gen. All rights reserved.
 //
 
-#import "BaseTableViewCell.h"
+#import "BaseBoard.h"
 
-@interface PlanetBoardCell : BaseTableViewCell
-
-
+@interface PlanetTrackBoard : BaseBoard
 
 @end

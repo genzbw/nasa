@@ -7,8 +7,11 @@
 //
 
 #import "Bee_UIBoard.h"
+#import "NavigationView.h"
 
-@interface BaseBoard : BeeUIBoard
+@interface BaseBoard : BeeUIBoard<NavigationViewProtocol>
+
+@property (nonatomic,assign) BOOL needBack;
 
 /**
  *  when message has errors,

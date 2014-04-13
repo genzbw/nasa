@@ -39,16 +39,13 @@
     [super handleUISignal:signal];
     if ([signal is:BeeUIBoard.CREATE_VIEWS]) {
         self.view.backgroundColor=[UIColor clearColor];
-        UITableView *tableView=nil;
-        if (self.navigationBarShown) {
-            tableView=[[UITableView alloc] initWithFrame:CGRectMake(self.view.origin.x, self.view.origin.y+self.navigationController.navigationBar.height, self.view.width, self.view.height-self.navigationController.navigationBar.height)];
-        }else{
-            tableView=[[UITableView alloc] initWithFrame:self.view.bounds];
-        }
+        UITableView *tableView=[[UITableView alloc] initWithFrame:CGRectZero];
+        tableView.backgroundColor=[UIColor blackColor];
         self.tableView=tableView;
         [tableView release];
         self.tableView.dataSource=self;
         self.tableView.delegate=self;
+        self.tableView.separatorColor=RGB(13, 78, 165);
         self.tableView.autoresizingMask=UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
         [self.view addSubview:_tableView];
         if (_needRefeshHeaderView) {
@@ -56,10 +53,16 @@
             view.delegate = self;
             [self.tableView addSubview:view];
             _refreshHeaderView=view;
+            _refreshHeaderView.hidden=YES;
             [view release];
         }
     }else if ([signal is:BeeUIBoard.LAYOUT_VIEWS]){
-        NSLog(@"self:%@,tableView:%@",self,self.tableView);
+        //NSLog(@"self:%@,tableView:%@",self,self.tableView);
+        if (self.navigationBarShown) {
+            self.tableView.frame=CGRectMake(self.view.origin.x, self.view.origin.y+self.navigationController.navigationBar.height, self.view.width, self.view.height-self.navigationController.navigationBar.height);
+        }else{
+            self.tableView.frame=self.view.bounds;
+        }
     }
 }
 

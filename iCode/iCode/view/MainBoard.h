@@ -7,8 +7,9 @@
 //
 
 #import "BaseBoard.h"
+#import "UITabBarView.h"
 
-@interface MainBoard : BaseBoard<UITabBarDelegate>
+@interface MainBoard : BaseBoard<UITabBarViewDelegate>
 
 
 @property (nonatomic,assign) BeeUIRouter *router;

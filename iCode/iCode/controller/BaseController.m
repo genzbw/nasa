@@ -18,9 +18,7 @@
 
 
 - (void)loadFromCache:(BeeMessage *)message{
-    if (_needLoadFromCache) {
-        
-    }
+    
 }
 
 - (void)doMessageError:(BeeMessage*)message{
@@ -54,6 +52,7 @@
         }
     }
 }
+
 
 
 @end
