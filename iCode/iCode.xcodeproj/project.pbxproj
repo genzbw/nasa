@@ -16,7 +16,6 @@
 		B220C13C18F9C753006A0D12 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B220C13B18F9C753006A0D12 /* CoreMotion.framework */; };
 		B220C13F18F9C848006A0D12 /* TrackView.m in Sources */ = {isa = PBXBuildFile; fileRef = B220C13E18F9C848006A0D12 /* TrackView.m */; };
 		B220C14518F9CA4E006A0D12 /* ServiceLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = B220C14418F9CA4E006A0D12 /* ServiceLocation.m */; };
-		B220C17118F9DAE2006A0D12 /* CPTTestAppScatterPlotController.m in Sources */ = {isa = PBXBuildFile; fileRef = B220C17018F9DAE2006A0D12 /* CPTTestAppScatterPlotController.m */; };
 		B220C17418F9DB9F006A0D12 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B220C17318F9DB9F006A0D12 /* QuartzCore.framework */; };
 		B236C3B418ECC93900677220 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B236C3B318ECC93900677220 /* Foundation.framework */; };
 		B236C3B618ECC93900677220 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B236C3B518ECC93900677220 /* CoreGraphics.framework */; };
@@ -353,10 +352,14 @@
 		B236C97E18EDCF8700677220 /* HMAC.m in Sources */ = {isa = PBXBuildFile; fileRef = B236C97D18EDCF8700677220 /* HMAC.m */; };
 		B236C98018EDCFA000677220 /* libSystem.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B236C97F18EDCFA000677220 /* libSystem.dylib */; };
 		B23B8C3E18F9F805003D484F /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B23B8C3D18F9F805003D484F /* Accelerate.framework */; };
+		B23B8C4318FA0172003D484F /* BlueTexture.png in Resources */ = {isa = PBXBuildFile; fileRef = B23B8C4218FA0172003D484F /* BlueTexture.png */; };
+		B23B8C4618FA036B003D484F /* PlanetTrackBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = B23B8C4518FA036B003D484F /* PlanetTrackBoard.m */; };
 		B27DA9F518F98E7400EA6FD0 /* PlanetsBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = B27DA9F418F98E7400EA6FD0 /* PlanetsBoard.m */; };
 		B27DA9F818F98E8E00EA6FD0 /* PlanetDetailBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = B27DA9F718F98E8E00EA6FD0 /* PlanetDetailBoard.m */; };
 		B27DA9FB18F98EC500EA6FD0 /* PlanetBoardCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B27DA9FA18F98EC500EA6FD0 /* PlanetBoardCell.m */; };
 		B27DA9FF18F98EF500EA6FD0 /* TelescopeBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = B27DA9FE18F98EF500EA6FD0 /* TelescopeBoard.m */; };
+		B297105A18FA1B3700BD6657 /* RealTimePlot.m in Sources */ = {isa = PBXBuildFile; fileRef = B297105918FA1B3700BD6657 /* RealTimePlot.m */; };
+		B297106018FA1B5B00BD6657 /* PlotItem.m in Sources */ = {isa = PBXBuildFile; fileRef = B297105F18FA1B5B00BD6657 /* PlotItem.m */; };
 		B2A11D2218F9F2130062F054 /* libCorePlot-CocoaTouch.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B2A11D2118F9F2130062F054 /* libCorePlot-CocoaTouch.a */; };
 		B2A11D2418F9F2200062F054 /* libCorePlot-CocoaTouch.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B2A11D2318F9F2200062F054 /* libCorePlot-CocoaTouch.a */; };
 		B2A2830518F59127007F231C /* ImageDetailBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = B2A2830418F59127007F231C /* ImageDetailBoard.m */; };
@@ -380,6 +383,28 @@
 		B2B1A06718F88ECD00DC6974 /* grayArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B2B1A05F18F88ECD00DC6974 /* grayArrow@2x.png */; };
 		B2B1A06818F88ECD00DC6974 /* whiteArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = B2B1A06018F88ECD00DC6974 /* whiteArrow.png */; };
 		B2B1A06918F88ECD00DC6974 /* whiteArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B2B1A06118F88ECD00DC6974 /* whiteArrow@2x.png */; };
+		B2BB0FAE18FA33640059FD43 /* PlanetsController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2BB0FAD18FA33640059FD43 /* PlanetsController.m */; };
+		B2BB0FB418FA3B390059FD43 /* BasePlanet.m in Sources */ = {isa = PBXBuildFile; fileRef = B2BB0FB318FA3B390059FD43 /* BasePlanet.m */; };
+		B2BB0FBA18FA4ACB0059FD43 /* PlanetModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B2BB0FB918FA4ACB0059FD43 /* PlanetModel.m */; };
+		B2BB0FD918FA5D8C0059FD43 /* BasePlanetDistance.m in Sources */ = {isa = PBXBuildFile; fileRef = B2BB0FD818FA5D8C0059FD43 /* BasePlanetDistance.m */; };
+		B2BB0FF818FA86770059FD43 /* CoverController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2BB0FF718FA86770059FD43 /* CoverController.m */; };
+		B2BB0FFC18FA99640059FD43 /* NavigationView.m in Sources */ = {isa = PBXBuildFile; fileRef = B2BB0FFB18FA99640059FD43 /* NavigationView.m */; };
+		B2BB100B18FAA86C0059FD43 /* active-navbar-gear.png in Resources */ = {isa = PBXBuildFile; fileRef = B2BB100018FAA86C0059FD43 /* active-navbar-gear.png */; };
+		B2BB100C18FAA86C0059FD43 /* active-navbar-planetoid.png in Resources */ = {isa = PBXBuildFile; fileRef = B2BB100118FAA86C0059FD43 /* active-navbar-planetoid.png */; };
+		B2BB100D18FAA86C0059FD43 /* active-navbar-telescope.png in Resources */ = {isa = PBXBuildFile; fileRef = B2BB100218FAA86C0059FD43 /* active-navbar-telescope.png */; };
+		B2BB100E18FAA86C0059FD43 /* bottom-bar.png in Resources */ = {isa = PBXBuildFile; fileRef = B2BB100318FAA86C0059FD43 /* bottom-bar.png */; };
+		B2BB100F18FAA86C0059FD43 /* dim-line.png in Resources */ = {isa = PBXBuildFile; fileRef = B2BB100418FAA86C0059FD43 /* dim-line.png */; };
+		B2BB101018FAA86C0059FD43 /* dividing-line.png in Resources */ = {isa = PBXBuildFile; fileRef = B2BB100518FAA86C0059FD43 /* dividing-line.png */; };
+		B2BB101118FAA86C0059FD43 /* navbar-gear.png in Resources */ = {isa = PBXBuildFile; fileRef = B2BB100618FAA86C0059FD43 /* navbar-gear.png */; };
+		B2BB101218FAA86C0059FD43 /* navbar-planetoid.png in Resources */ = {isa = PBXBuildFile; fileRef = B2BB100718FAA86C0059FD43 /* navbar-planetoid.png */; };
+		B2BB101318FAA86C0059FD43 /* navbar-telescope.png in Resources */ = {isa = PBXBuildFile; fileRef = B2BB100818FAA86C0059FD43 /* navbar-telescope.png */; };
+		B2BB101418FAA86C0059FD43 /* Page-Title.png in Resources */ = {isa = PBXBuildFile; fileRef = B2BB100918FAA86C0059FD43 /* Page-Title.png */; };
+		B2BB101518FAA86C0059FD43 /* planetoid-large.png in Resources */ = {isa = PBXBuildFile; fileRef = B2BB100A18FAA86C0059FD43 /* planetoid-large.png */; };
+		B2BB101818FAA96F0059FD43 /* UITabBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = B2BB101718FAA96F0059FD43 /* UITabBarView.m */; };
+		B2BB103718FAB5780059FD43 /* button_telescope.png in Resources */ = {isa = PBXBuildFile; fileRef = B2BB103618FAB5780059FD43 /* button_telescope.png */; };
+		B2BB103C18FAB57B0059FD43 /* button_setting.png in Resources */ = {isa = PBXBuildFile; fileRef = B2BB103B18FAB57B0059FD43 /* button_setting.png */; };
+		B2BB103E18FAB5860059FD43 /* bottom.png in Resources */ = {isa = PBXBuildFile; fileRef = B2BB103D18FAB5860059FD43 /* bottom.png */; };
+		B2BB104018FAB5890059FD43 /* button_asteroid.png in Resources */ = {isa = PBXBuildFile; fileRef = B2BB103F18FAB5890059FD43 /* button_asteroid.png */; };
 		B2D148F518F33D8900AEEA10 /* BaseBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = B2D148F418F33D8900AEEA10 /* BaseBoard.m */; };
 		B2D148F818F33DC800AEEA10 /* MainBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = B2D148F718F33DC800AEEA10 /* MainBoard.m */; };
 		B2D148FB18F3518900AEEA10 /* ImageBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = B2D148FA18F3518900AEEA10 /* ImageBoard.m */; };
@@ -418,8 +443,6 @@
 		B220C13E18F9C848006A0D12 /* TrackView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackView.m; sourceTree = "<group>"; };
 		B220C14318F9CA4E006A0D12 /* ServiceLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServiceLocation.h; sourceTree = "<group>"; };
 		B220C14418F9CA4E006A0D12 /* ServiceLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServiceLocation.m; sourceTree = "<group>"; };
-		B220C16F18F9DAE2006A0D12 /* CPTTestAppScatterPlotController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPTTestAppScatterPlotController.h; sourceTree = "<group>"; };
-		B220C17018F9DAE2006A0D12 /* CPTTestAppScatterPlotController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPTTestAppScatterPlotController.m; sourceTree = "<group>"; };
 		B220C17218F9DB54006A0D12 /* CorePlot-CocoaTouch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CorePlot-CocoaTouch.h"; sourceTree = "<group>"; };
 		B220C17318F9DB9F006A0D12 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		B236C3B018ECC93900677220 /* iCode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iCode.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1089,6 +1112,9 @@
 		B236C97D18EDCF8700677220 /* HMAC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMAC.m; sourceTree = "<group>"; };
 		B236C97F18EDCFA000677220 /* libSystem.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libSystem.dylib; path = usr/lib/libSystem.dylib; sourceTree = SDKROOT; };
 		B23B8C3D18F9F805003D484F /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		B23B8C4218FA0172003D484F /* BlueTexture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BlueTexture.png; sourceTree = "<group>"; };
+		B23B8C4418FA036B003D484F /* PlanetTrackBoard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlanetTrackBoard.h; sourceTree = "<group>"; };
+		B23B8C4518FA036B003D484F /* PlanetTrackBoard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlanetTrackBoard.m; sourceTree = "<group>"; };
 		B27DA9F318F98E7400EA6FD0 /* PlanetsBoard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlanetsBoard.h; sourceTree = "<group>"; };
 		B27DA9F418F98E7400EA6FD0 /* PlanetsBoard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlanetsBoard.m; sourceTree = "<group>"; };
 		B27DA9F618F98E8E00EA6FD0 /* PlanetDetailBoard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlanetDetailBoard.h; sourceTree = "<group>"; };
@@ -1097,6 +1123,10 @@
 		B27DA9FA18F98EC500EA6FD0 /* PlanetBoardCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlanetBoardCell.m; sourceTree = "<group>"; };
 		B27DA9FD18F98EF500EA6FD0 /* TelescopeBoard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TelescopeBoard.h; sourceTree = "<group>"; };
 		B27DA9FE18F98EF500EA6FD0 /* TelescopeBoard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TelescopeBoard.m; sourceTree = "<group>"; };
+		B297105818FA1B3700BD6657 /* RealTimePlot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RealTimePlot.h; sourceTree = "<group>"; };
+		B297105918FA1B3700BD6657 /* RealTimePlot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RealTimePlot.m; sourceTree = "<group>"; };
+		B297105E18FA1B5B00BD6657 /* PlotItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlotItem.h; sourceTree = "<group>"; };
+		B297105F18FA1B5B00BD6657 /* PlotItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlotItem.m; sourceTree = "<group>"; };
 		B2A11D2118F9F2130062F054 /* libCorePlot-CocoaTouch.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libCorePlot-CocoaTouch.a"; sourceTree = "<group>"; };
 		B2A11D2318F9F2200062F054 /* libCorePlot-CocoaTouch.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libCorePlot-CocoaTouch.a"; sourceTree = "<group>"; };
 		B2A11D2518F9F3610062F054 /* CorePlot-CocoaTouch.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "CorePlot-CocoaTouch.xcodeproj"; path = "../../coreplot/core-plot/framework/CorePlot-CocoaTouch.xcodeproj"; sourceTree = "<group>"; };
@@ -1134,6 +1164,35 @@
 		B2B1A05F18F88ECD00DC6974 /* grayArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "grayArrow@2x.png"; sourceTree = "<group>"; };
 		B2B1A06018F88ECD00DC6974 /* whiteArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = whiteArrow.png; sourceTree = "<group>"; };
 		B2B1A06118F88ECD00DC6974 /* whiteArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "whiteArrow@2x.png"; sourceTree = "<group>"; };
+		B2BB0FAC18FA33640059FD43 /* PlanetsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlanetsController.h; sourceTree = "<group>"; };
+		B2BB0FAD18FA33640059FD43 /* PlanetsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlanetsController.m; sourceTree = "<group>"; };
+		B2BB0FB218FA3B390059FD43 /* BasePlanet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasePlanet.h; sourceTree = "<group>"; };
+		B2BB0FB318FA3B390059FD43 /* BasePlanet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasePlanet.m; sourceTree = "<group>"; };
+		B2BB0FB818FA4ACB0059FD43 /* PlanetModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlanetModel.h; sourceTree = "<group>"; };
+		B2BB0FB918FA4ACB0059FD43 /* PlanetModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlanetModel.m; sourceTree = "<group>"; };
+		B2BB0FD718FA5D8C0059FD43 /* BasePlanetDistance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasePlanetDistance.h; sourceTree = "<group>"; };
+		B2BB0FD818FA5D8C0059FD43 /* BasePlanetDistance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasePlanetDistance.m; sourceTree = "<group>"; };
+		B2BB0FF618FA86770059FD43 /* CoverController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoverController.h; sourceTree = "<group>"; };
+		B2BB0FF718FA86770059FD43 /* CoverController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoverController.m; sourceTree = "<group>"; };
+		B2BB0FFA18FA99640059FD43 /* NavigationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationView.h; sourceTree = "<group>"; };
+		B2BB0FFB18FA99640059FD43 /* NavigationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationView.m; sourceTree = "<group>"; };
+		B2BB100018FAA86C0059FD43 /* active-navbar-gear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "active-navbar-gear.png"; sourceTree = "<group>"; };
+		B2BB100118FAA86C0059FD43 /* active-navbar-planetoid.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "active-navbar-planetoid.png"; sourceTree = "<group>"; };
+		B2BB100218FAA86C0059FD43 /* active-navbar-telescope.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "active-navbar-telescope.png"; sourceTree = "<group>"; };
+		B2BB100318FAA86C0059FD43 /* bottom-bar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bottom-bar.png"; sourceTree = "<group>"; };
+		B2BB100418FAA86C0059FD43 /* dim-line.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dim-line.png"; sourceTree = "<group>"; };
+		B2BB100518FAA86C0059FD43 /* dividing-line.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dividing-line.png"; sourceTree = "<group>"; };
+		B2BB100618FAA86C0059FD43 /* navbar-gear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navbar-gear.png"; sourceTree = "<group>"; };
+		B2BB100718FAA86C0059FD43 /* navbar-planetoid.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navbar-planetoid.png"; sourceTree = "<group>"; };
+		B2BB100818FAA86C0059FD43 /* navbar-telescope.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navbar-telescope.png"; sourceTree = "<group>"; };
+		B2BB100918FAA86C0059FD43 /* Page-Title.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Page-Title.png"; sourceTree = "<group>"; };
+		B2BB100A18FAA86C0059FD43 /* planetoid-large.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "planetoid-large.png"; sourceTree = "<group>"; };
+		B2BB101618FAA96F0059FD43 /* UITabBarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITabBarView.h; sourceTree = "<group>"; };
+		B2BB101718FAA96F0059FD43 /* UITabBarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UITabBarView.m; sourceTree = "<group>"; };
+		B2BB103618FAB5780059FD43 /* button_telescope.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_telescope.png; sourceTree = "<group>"; };
+		B2BB103B18FAB57B0059FD43 /* button_setting.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_setting.png; sourceTree = "<group>"; };
+		B2BB103D18FAB5860059FD43 /* bottom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bottom.png; sourceTree = "<group>"; };
+		B2BB103F18FAB5890059FD43 /* button_asteroid.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_asteroid.png; sourceTree = "<group>"; };
 		B2D148F318F33D8900AEEA10 /* BaseBoard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseBoard.h; sourceTree = "<group>"; };
 		B2D148F418F33D8900AEEA10 /* BaseBoard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseBoard.m; sourceTree = "<group>"; };
 		B2D148F618F33DC800AEEA10 /* MainBoard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainBoard.h; sourceTree = "<group>"; };
@@ -2518,6 +2577,8 @@
 				B236C97918ED0D7100677220 /* BaseController.m */,
 				B20F69F418F209F60078543C /* UserController.h */,
 				B20F69F518F209F60078543C /* UserController.m */,
+				B2BB0FAC18FA33640059FD43 /* PlanetsController.h */,
+				B2BB0FAD18FA33640059FD43 /* PlanetsController.m */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -2528,6 +2589,8 @@
 				B2A2831018F607B1007F231C /* entity */,
 				B2A2831118F607DA007F231C /* PhotoModel.h */,
 				B2A2831218F607DA007F231C /* PhotoModel.m */,
+				B2BB0FB818FA4ACB0059FD43 /* PlanetModel.h */,
+				B2BB0FB918FA4ACB0059FD43 /* PlanetModel.m */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -2544,6 +2607,10 @@
 				B236C7EE18ECD0C700677220 /* AppBoard.m */,
 				B2D148F618F33DC800AEEA10 /* MainBoard.h */,
 				B2D148F718F33DC800AEEA10 /* MainBoard.m */,
+				B2BB0FF618FA86770059FD43 /* CoverController.h */,
+				B2BB0FF718FA86770059FD43 /* CoverController.m */,
+				B2BB101618FAA96F0059FD43 /* UITabBarView.h */,
+				B2BB101718FAA96F0059FD43 /* UITabBarView.m */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -2592,12 +2659,12 @@
 		B27DA9FC18F98EDA00EA6FD0 /* telescope */ = {
 			isa = PBXGroup;
 			children = (
-				B220C16F18F9DAE2006A0D12 /* CPTTestAppScatterPlotController.h */,
-				B220C17018F9DAE2006A0D12 /* CPTTestAppScatterPlotController.m */,
 				B27DA9FD18F98EF500EA6FD0 /* TelescopeBoard.h */,
 				B27DA9FE18F98EF500EA6FD0 /* TelescopeBoard.m */,
 				B220C13D18F9C848006A0D12 /* TrackView.h */,
 				B220C13E18F9C848006A0D12 /* TrackView.m */,
+				B23B8C4418FA036B003D484F /* PlanetTrackBoard.h */,
+				B23B8C4518FA036B003D484F /* PlanetTrackBoard.m */,
 			);
 			name = telescope;
 			sourceTree = "<group>";
@@ -2635,10 +2702,18 @@
 		B2A2831018F607B1007F231C /* entity */ = {
 			isa = PBXGroup;
 			children = (
+				B297105E18FA1B5B00BD6657 /* PlotItem.h */,
+				B297105F18FA1B5B00BD6657 /* PlotItem.m */,
+				B297105818FA1B3700BD6657 /* RealTimePlot.h */,
+				B297105918FA1B3700BD6657 /* RealTimePlot.m */,
 				B2A6752918F4AA84006C70E4 /* Photo.h */,
 				B2A6752A18F4AA84006C70E4 /* Photo.m */,
 				B2B1A04F18F8891900DC6974 /* EmptyObject.h */,
 				B2B1A05018F8891900DC6974 /* EmptyObject.m */,
+				B2BB0FB218FA3B390059FD43 /* BasePlanet.h */,
+				B2BB0FB318FA3B390059FD43 /* BasePlanet.m */,
+				B2BB0FD718FA5D8C0059FD43 /* BasePlanetDistance.h */,
+				B2BB0FD818FA5D8C0059FD43 /* BasePlanetDistance.m */,
 			);
 			name = entity;
 			sourceTree = "<group>";
@@ -2669,6 +2744,8 @@
 				B2B1A04D18F887FB00DC6974 /* LoadMoreButtonCell.m */,
 				B2B1A05218F88B4300DC6974 /* BaseTableBoard.h */,
 				B2B1A05318F88B4300DC6974 /* BaseTableBoard.m */,
+				B2BB0FFA18FA99640059FD43 /* NavigationView.h */,
+				B2BB0FFB18FA99640059FD43 /* NavigationView.m */,
 			);
 			name = base;
 			sourceTree = "<group>";
@@ -2685,6 +2762,22 @@
 		B2B1A05918F88ECD00DC6974 /* resources */ = {
 			isa = PBXGroup;
 			children = (
+				B2BB103618FAB5780059FD43 /* button_telescope.png */,
+				B2BB100018FAA86C0059FD43 /* active-navbar-gear.png */,
+				B2BB103F18FAB5890059FD43 /* button_asteroid.png */,
+				B2BB100118FAA86C0059FD43 /* active-navbar-planetoid.png */,
+				B2BB100218FAA86C0059FD43 /* active-navbar-telescope.png */,
+				B2BB100318FAA86C0059FD43 /* bottom-bar.png */,
+				B2BB103B18FAB57B0059FD43 /* button_setting.png */,
+				B2BB100418FAA86C0059FD43 /* dim-line.png */,
+				B2BB100518FAA86C0059FD43 /* dividing-line.png */,
+				B2BB100618FAA86C0059FD43 /* navbar-gear.png */,
+				B2BB100718FAA86C0059FD43 /* navbar-planetoid.png */,
+				B2BB103D18FAB5860059FD43 /* bottom.png */,
+				B2BB100818FAA86C0059FD43 /* navbar-telescope.png */,
+				B2BB100918FAA86C0059FD43 /* Page-Title.png */,
+				B2BB100A18FAA86C0059FD43 /* planetoid-large.png */,
+				B23B8C4218FA0172003D484F /* BlueTexture.png */,
 				B2B1A05A18F88ECD00DC6974 /* blackArrow.png */,
 				B2B1A05B18F88ECD00DC6974 /* blackArrow@2x.png */,
 				B2B1A05C18F88ECD00DC6974 /* blueArrow.png */,
@@ -2790,15 +2883,31 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2BB101218FAA86C0059FD43 /* navbar-planetoid.png in Resources */,
+				B23B8C4318FA0172003D484F /* BlueTexture.png in Resources */,
 				B2B1A06518F88ECD00DC6974 /* blueArrow@2x.png in Resources */,
+				B2BB100D18FAA86C0059FD43 /* active-navbar-telescope.png in Resources */,
 				B236C3BE18ECC93900677220 /* InfoPlist.strings in Resources */,
+				B2BB100E18FAA86C0059FD43 /* bottom-bar.png in Resources */,
+				B2BB101318FAA86C0059FD43 /* navbar-telescope.png in Resources */,
 				B2B1A06918F88ECD00DC6974 /* whiteArrow@2x.png in Resources */,
+				B2BB101518FAA86C0059FD43 /* planetoid-large.png in Resources */,
+				B2BB100C18FAA86C0059FD43 /* active-navbar-planetoid.png in Resources */,
+				B2BB100B18FAA86C0059FD43 /* active-navbar-gear.png in Resources */,
 				B2B1A06218F88ECD00DC6974 /* blackArrow.png in Resources */,
+				B2BB104018FAB5890059FD43 /* button_asteroid.png in Resources */,
 				B2B1A06718F88ECD00DC6974 /* grayArrow@2x.png in Resources */,
+				B2BB101018FAA86C0059FD43 /* dividing-line.png in Resources */,
+				B2BB103E18FAB5860059FD43 /* bottom.png in Resources */,
+				B2BB103C18FAB57B0059FD43 /* button_setting.png in Resources */,
 				B2B1A06418F88ECD00DC6974 /* blueArrow.png in Resources */,
 				B2B1A06318F88ECD00DC6974 /* blackArrow@2x.png in Resources */,
+				B2BB103718FAB5780059FD43 /* button_telescope.png in Resources */,
 				B2B1A06618F88ECD00DC6974 /* grayArrow.png in Resources */,
+				B2BB101418FAA86C0059FD43 /* Page-Title.png in Resources */,
 				B2B1A06818F88ECD00DC6974 /* whiteArrow.png in Resources */,
+				B2BB100F18FAA86C0059FD43 /* dim-line.png in Resources */,
+				B2BB101118FAA86C0059FD43 /* navbar-gear.png in Resources */,
 				B236C3C618ECC93900677220 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2931,6 +3040,7 @@
 				B236C79618ECC96D00677220 /* NSObject+BeeExtension.mm in Sources */,
 				B2B1A05418F88B4300DC6974 /* BaseTableBoard.m in Sources */,
 				B236C6E718ECC96D00677220 /* CSSStyleSelector.m in Sources */,
+				B2BB0FFC18FA99640059FD43 /* NavigationView.m in Sources */,
 				B236C77318ECC96D00677220 /* Bee_FileCache.mm in Sources */,
 				B236C77918ECC96D00677220 /* Bee_ActiveBuilder.m in Sources */,
 				B236C70918ECC96D00677220 /* Bee_UINavigationBar.m in Sources */,
@@ -2946,10 +3056,13 @@
 				B236C6AD18ECC96D00677220 /* Bee_Message.mm in Sources */,
 				B236C70618ECC96D00677220 /* Bee_UIKeyboard.m in Sources */,
 				B236C6F618ECC96D00677220 /* UITextField+UIDataBinding.m in Sources */,
+				B297106018FA1B5B00BD6657 /* PlotItem.m in Sources */,
 				B220C13F18F9C848006A0D12 /* TrackView.m in Sources */,
 				B236C74A18ECC96D00677220 /* BeeUIQuery+CSS.m in Sources */,
 				B236C73A18ECC96D00677220 /* Bee_UILayoutBuilder.m in Sources */,
+				B297105A18FA1B3700BD6657 /* RealTimePlot.m in Sources */,
 				B236C7B818ECC96D00677220 /* ProcessingRoutes.m in Sources */,
+				B2BB101818FAA96F0059FD43 /* UITabBarView.m in Sources */,
 				B236C70818ECC96D00677220 /* Bee_UIMenuController.m in Sources */,
 				B236C6B318ECC96D00677220 /* BeeMessage+BeeJSON.mm in Sources */,
 				B236C7DE18ECC96D00677220 /* unzip.c in Sources */,
@@ -3001,6 +3114,7 @@
 				B236C79718ECC96D00677220 /* NSObject+BeeJSON.mm in Sources */,
 				B236C7A718ECC96D00677220 /* Bee_HTTPRequest.m in Sources */,
 				B236C71318ECC96D00677220 /* Bee_UITabBar.m in Sources */,
+				B2BB0FF818FA86770059FD43 /* CoverController.m in Sources */,
 				B2D148FB18F3518900AEEA10 /* ImageBoard.m in Sources */,
 				B2B1A05818F88E5E00DC6974 /* EGORefreshTableHeaderView.m in Sources */,
 				B236C7CD18ECC96D00677220 /* OpenUDID.m in Sources */,
@@ -3044,6 +3158,7 @@
 				B27DA9FB18F98EC500EA6FD0 /* PlanetBoardCell.m in Sources */,
 				B236C79018ECC96D00677220 /* NSArray+BeeExtension.mm in Sources */,
 				B236C79918ECC96D00677220 /* NSObject+BeeNotification.mm in Sources */,
+				B2BB0FB418FA3B390059FD43 /* BasePlanet.m in Sources */,
 				B236C6F718ECC96D00677220 /* UITextView+UIDataBinding.m in Sources */,
 				B236C75A18ECC96D00677220 /* UIViewController+Transition.m in Sources */,
 				B236C73C18ECC96D00677220 /* Bee_UILayoutBuilder_v2.m in Sources */,
@@ -3085,7 +3200,6 @@
 				B236C79118ECC96D00677220 /* NSBundle+BeeExtension.m in Sources */,
 				B236C7A818ECC96D00677220 /* Bee_HTTPRequestQueue.m in Sources */,
 				B236C77018ECC96D00677220 /* Bee_SystemPackage.mm in Sources */,
-				B220C17118F9DAE2006A0D12 /* CPTTestAppScatterPlotController.m in Sources */,
 				B236C70418ECC96D00677220 /* Bee_UIImagePickerController.m in Sources */,
 				B236C6A918ECC96D00677220 /* Bee_Version.mm in Sources */,
 				B2D148F818F33DC800AEEA10 /* MainBoard.m in Sources */,
@@ -3096,6 +3210,7 @@
 				B236C77A18ECC96D00677220 /* Bee_ActiveObject.m in Sources */,
 				B20F69F318F203250078543C /* RemoteUserInfo.m in Sources */,
 				B236C7AA18ECC96D00677220 /* Bee_HTTPConnection2.m in Sources */,
+				B2BB0FAE18FA33640059FD43 /* PlanetsController.m in Sources */,
 				B236C75718ECC96D00677220 /* Bee_UITransitionFlip.m in Sources */,
 				B236C6FC18ECC96D00677220 /* Bee_UIAccelerometer.m in Sources */,
 				B236C74518ECC96D00677220 /* UITextView+BeeUILayout.m in Sources */,
@@ -3143,6 +3258,7 @@
 				B236C71F18ECC96D00677220 /* UIView+Metrics.m in Sources */,
 				B236C70318ECC96D00677220 /* Bee_UIDatePicker.m in Sources */,
 				B236C7AE18ECC96D00677220 /* Bee_HTTPResponse2.m in Sources */,
+				B2BB0FD918FA5D8C0059FD43 /* BasePlanetDistance.m in Sources */,
 				B236C73E18ECC96D00677220 /* Bee_UILayoutContainer.m in Sources */,
 				B236C74318ECC96D00677220 /* UIScrollView+BeeUILayout.m in Sources */,
 				B236C74B18ECC96D00677220 /* BeeUIQuery+Dimensions.m in Sources */,
@@ -3156,6 +3272,7 @@
 				B236C77C18ECC96D00677220 /* Bee_ActiveRecord.m in Sources */,
 				B236C6BD18ECC96D00677220 /* UIColor+BeeExtension.m in Sources */,
 				B236C78F18ECC96D00677220 /* Bee_UnitTest.m in Sources */,
+				B23B8C4618FA036B003D484F /* PlanetTrackBoard.m in Sources */,
 				B236C76D18ECC96D00677220 /* Bee_UITemplateParserXMLImpl_v2.m in Sources */,
 				B236C78718ECC96D00677220 /* Bee_Log.mm in Sources */,
 				B2A2830518F59127007F231C /* ImageDetailBoard.m in Sources */,
@@ -3163,6 +3280,7 @@
 				B236C79D18ECC96D00677220 /* NSObject+BeeTypeConversion.mm in Sources */,
 				B236C97E18EDCF8700677220 /* HMAC.m in Sources */,
 				B236C97218ECF9B600677220 /* OauthController.m in Sources */,
+				B2BB0FBA18FA4ACB0059FD43 /* PlanetModel.m in Sources */,
 				B236C7A118ECC96D00677220 /* Bee_LanguageSetting.m in Sources */,
 				B236C76918ECC96D00677220 /* Bee_UITemplateParserAndroid.m in Sources */,
 			);

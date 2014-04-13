@@ -16,6 +16,7 @@
 
 - (void)loadView{
     [super loadView];
+    self.backgroundColor=[UIColor blackColor];
 }
 
 @end

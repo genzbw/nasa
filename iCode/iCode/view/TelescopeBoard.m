@@ -12,7 +12,7 @@
 #import <CoreMotion/CoreMotion.h>
 #import "TrackView.h"
 #import "ServiceLocation.h"
-
+#import "PlanetTrackBoard.h"
 @interface TelescopeBoard ()
 
 @property (nonatomic,strong) NSMutableArray *capturedImages;
@@ -25,6 +25,8 @@
 
 @property (nonatomic,strong) ServiceLocation *serviceLocation;
 
+@property (nonatomic,strong) PlanetTrackBoard *trackBoard;
+
 @end
 
 @implementation TelescopeBoard
@@ -36,6 +38,7 @@
     [_imagePickerController release];
     [_motionManager release];
     [_serviceLocation release];
+    [_trackBoard release];
     [super dealloc];
 }
 
@@ -65,10 +68,10 @@
  */
 - (void)startTrackDirection{
     [self.motionManager startGyroUpdatesToQueue:[NSOperationQueue currentQueue] withHandler:^(CMGyroData *gyroData, NSError *error) {
-        //self.overlayView.text=[NSString stringWithFormat:@"旋转角度:X:%.3f,Y:%.3f,X:%.3f",gyroData.rotationRate.x,gyroData.rotationRate.y,gyroData.rotationRate.z];
+        [self.overlayView setText:[NSString stringWithFormat:@"旋转角度:X:%.3f,Y:%.3f,X:%.3f",gyroData.rotationRate.x,gyroData.rotationRate.y,gyroData.rotationRate.z]];
     }];
     [self.motionManager startAccelerometerUpdatesToQueue:[NSOperationQueue currentQueue] withHandler:^(CMAccelerometerData *accelerometerData, NSError *error) {
-        //self.overlayView.text=[NSString stringWithFormat:@"加速计:X:%.3f,Y:%.3f,Z:%.3f",accelerometerData.acceleration.x,accelerometerData.acceleration.y,accelerometerData.acceleration.z];
+        [self.overlayView setAccText:[NSString stringWithFormat:@"加速计:X:%.3f,Y:%.3f,Z:%.3f",accelerometerData.acceleration.x,accelerometerData.acceleration.y,accelerometerData.acceleration.z]];
     }];
 }
 
@@ -132,9 +135,12 @@
             [self initMotionManager];
             self.serviceLocation=[[[ServiceLocation alloc] init] autorelease];
             self.serviceLocation.whenUpdate=^(void){
-                [self.overlayView setText:[NSString stringWithFormat:@"descri:%@",[self.serviceLocation.location description]]];
+                [self.overlayView setGpsText:[NSString stringWithFormat:@"descri:%@",[self.serviceLocation.location description]]];
             };
             [self showCamara:UIImagePickerControllerSourceTypeCamera];
+            self.trackBoard=[[PlanetTrackBoard new] autorelease];
+            self.trackBoard.view.frame=self.overlayView.frame;
+            [self.overlayView addSubview:self.trackBoard.view];
             
         }
     }else if([signal is:BeeUIBoard.WILL_APPEAR]){

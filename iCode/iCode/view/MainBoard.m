@@ -48,20 +48,18 @@ DEF_SIGNAL(CONFIG)
     self.router.view.autoresizingMask=UIViewAutoresizingNone;
     self.router.view.frame=CGRectMake(0,0,contentView.width,contentView.height-44);
     [contentView addSubview:self.router.view];
-    _tabBar=[[BeeUITabBar alloc] initWithFrame:CGRectMake(0,contentView.height-44, contentView.width, 44)];
-    [contentView addSubview:_tabBar];
-    _tabBar.delegate=self;
-    _tabBar.itemPositioning=UITabBarItemPositioningFill;
-    [_tabBar addTitle:@"planets" name:@"planets" signal:MainBoard.PLANETLIST];
-    [_tabBar addTitle:@"telescope" name:@"telescope" signal:MainBoard.TELESCOPE];
-    [_tabBar addTitle:@"config" name:@"config" signal:MainBoard.CONFIG];
-    for (UITabBarItem *item in _tabBar.items) {
-        [item setTitlePositionAdjustment: UIOffsetMake(0, -16.5)];
-    }
-    [self tabBar:_tabBar didSelectItem:[_tabBar.items objectAtIndex:0]];
+    UITabBarView *tabBar=[[UITabBarView alloc] initWithFrame:CGRectMake(0,contentView.height-130, contentView.width, 130)];
+    tabBar.delegate=self;
+    [contentView addSubview:tabBar];
+    [tabBar release];
     [contentView release];
+    [self sendUISignal:MainBoard.PLANETLIST];
 }
 
+
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+}
 
 
 /**
@@ -78,8 +76,21 @@ ON_SIGNAL2(MainBoard,signal){
 }
 
 
-- (void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item{
-    [_tabBar setSelectedName:[item performSelector:@selector(name)]];
+- (void)buttonSelected:(UIButton*)button{
+    int index=button.tag-1000;
+    switch (index) {
+        case 0:
+            [self sendUISignal:MainBoard.PLANETLIST];
+            break;
+        case 1:
+            [self sendUISignal:MainBoard.TELESCOPE];
+            break;
+        case 2:
+            [self sendUISignal:MainBoard.CONFIG];
+            break;
+        default:
+            break;
+    }
 }
 
 @end

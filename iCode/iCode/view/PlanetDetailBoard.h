@@ -8,6 +8,19 @@
 
 #import "BaseBoard.h"
 
+
+
+@class BasePlanet;
+@protocol DetailControllerDelegate;
+
 @interface PlanetDetailBoard : BaseBoard
 
+@property (nonatomic,assign) id<DetailControllerDelegate> delegate;
+
+- (id)initWithPlanet:(BasePlanet*)planet;
+
+@end
+
+@protocol DetailControllerDelegate <NSObject>
+-(void)modalViewControllerShouldClose:(PlanetDetailBoard *)viewController;
 @end
