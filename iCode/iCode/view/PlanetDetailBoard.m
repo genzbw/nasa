@@ -43,6 +43,32 @@
     [super handleUISignal:signal];
     if ([signal is:BeeUIBoard.CREATE_VIEWS]) {
         self.title=self.planet.target_body_name;
+        [self.view setBackgroundColor:[UIColor blackColor]];
+        
+        NSDictionary *dict=[self.planet JSON];
+        CGFloat x=20.0;
+        CGFloat y=65.0;
+        CGFloat width=self.width-2*20;
+        CGFloat height=30;
+        for (NSString *key in dict.allKeys) {
+            NSString *value=[dict objectForKey:key];
+            UILabel *keyLabel=[[UILabel alloc] initWithFrame:CGRectMake(x, y, width/2, height)];
+            keyLabel.font=[UIFont systemFontOfSize:16];
+            keyLabel.textColor=RGB(118, 118, 118);
+            [keyLabel setTextAlignment:NSTextAlignmentLeft];
+            [keyLabel setText:[NSString stringWithFormat:@"%@:",key]];
+            [self.view addSubview:keyLabel];
+            [keyLabel release];
+            UILabel *valueLabel=[[UILabel alloc] initWithFrame:CGRectMake(x+width/2, y, width/2, height)];
+            valueLabel.font=[UIFont systemFontOfSize:16];
+            valueLabel.textColor=RGB(118, 118, 118);
+            [valueLabel setTextAlignment:NSTextAlignmentRight];
+            [valueLabel setText:[NSString stringWithFormat:@"%@:",value]];
+            [self.view addSubview:valueLabel];
+            [valueLabel release];
+            y+=height;
+        }
+        
         UILabel *helloLabel=[[UILabel alloc] initWithFrame:self.viewBound];
         helloLabel.top=44;
         [self.view addSubview:helloLabel];

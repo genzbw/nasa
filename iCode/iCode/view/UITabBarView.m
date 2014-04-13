@@ -15,6 +15,7 @@
 - (void)loadView{
     UIImageView *imageView=[[UIImageView alloc] initWithFrame:self.bounds];
     [imageView setBackgroundImage:[UIImage imageNamed:@"bottom.png"]];
+    [imageView setUserInteractionEnabled:YES];
     [self addSubview:imageView];
     
     NSArray *pics=[NSArray arrayWithObjects:@"button_asteroid.png",@"button_telescope.png",@"button_setting.png", nil];

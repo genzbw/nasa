@@ -74,6 +74,7 @@
     [super handleUISignal:signal];
     if ([signal is:BeeUIBoard.CREATE_VIEWS]) {
         self.title=@"Planets";
+        [self.tableView setSeparatorColor:RGB(150, 150, 150)];
     }else if([signal is:BeeUIBoard.LOAD_DATAS]){
         self.MSG(PlanetsController.PLANTS_LIST);
     }else if ([signal is:BeeUIBoard.LAYOUT_VIEWS]){

@@ -45,7 +45,6 @@
         [tableView release];
         self.tableView.dataSource=self;
         self.tableView.delegate=self;
-        self.tableView.separatorColor=RGB(13, 78, 165);
         self.tableView.autoresizingMask=UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
         [self.view addSubview:_tableView];
         if (_needRefeshHeaderView) {

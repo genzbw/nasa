@@ -34,9 +34,11 @@
         self.tableView.dataSource=self;
         self.tableView.delegate=self;
         self.tableView.autoresizingMask=UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
+        self.tableView.backgroundColor=[UIColor blackColor];
+        [self.tableView setSeparatorColor:RGB(150, 150, 150)];
         [self.view addSubview:_tableView];
     }else if([signal is:BeeUIBoard.LOAD_DATAS]){
-        self.datas=[NSArray arrayWithObjects:@"alert",nil];
+        self.datas=[NSArray arrayWithObjects:@"NEA ALERT",nil];
     }else if([signal is:BeeUISwitch.ON]) {
         if ([Global sharedInstance].alertSwitchOn!=YES) {
             [Global sharedInstance].alertSwitchOn=YES;
@@ -59,7 +61,7 @@
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
     if (section==0) {
-        return @"System";
+        return @"SETTINGS";
     }else{
         return @"Other";
     }
@@ -70,6 +72,7 @@
     UITableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if (cell==nil) {
         cell=[[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue2 reuseIdentifier:cellIdentifier] autorelease];
+        cell.backgroundColor=[UIColor blackColor];
         [cell.textLabel setFont:[UIFont systemFontOfSize:12]];
         [cell.textLabel setTextAlignment:NSTextAlignmentLeft];
         BeeUISwitch *switchView=[[BeeUISwitch alloc] initWithFrame:CGRectMake(self.width-60, 7, 60, 20)];
@@ -79,6 +82,11 @@
     }
     [[cell textLabel] setText:[self.datas objectAtIndex:indexPath.row]];
     return cell;
+}
+
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 @end
